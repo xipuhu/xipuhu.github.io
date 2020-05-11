@@ -6,16 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>书~馆 | xipuhu&#39;s blog</title>
+  <title>拓扑、距离、范数、内积 | xipuhu&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="智慧是一码事，精通事故又是一码事。————1万小时定律         .hexo-douban-tabs {     margin-bottom: 15px;     margin-top: 15px; }  .hexo-douban-tab {     padding: 5px; }  .hexo-douban-active {     backgro">
-<meta property="og:type" content="website">
-<meta property="og:title" content="书~馆">
-<meta property="og:url" content="http://yoursite.com/books/index.html">
+  <meta name="description" content="距离、范数距离定义　　设$X$ 是一非空集合，任给定一对这一集合的元素$x,y$ ，都给定一个实数$d(x,y)$ 与它们对应，并且满足： 　　$(1)\ \ d(x,y)\geq0;d(x,y)&#x3D;0\Leftrightarrow x&#x3D;y; $">
+<meta property="og:type" content="article">
+<meta property="og:title" content="拓扑、距离、范数、内积">
+<meta property="og:url" content="http://yoursite.com/2020/05/11/%E6%8B%93%E6%89%91%E3%80%81%E8%B7%9D%E7%A6%BB%E3%80%81%E8%8C%83%E6%95%B0%E3%80%81%E5%86%85%E7%A7%AF/index.html">
 <meta property="og:site_name" content="xipuhu&#39;s blog">
-<meta property="og:description" content="智慧是一码事，精通事故又是一码事。————1万小时定律         .hexo-douban-tabs {     margin-bottom: 15px;     margin-top: 15px; }  .hexo-douban-tab {     padding: 5px; }  .hexo-douban-active {     backgro">
+<meta property="og:description" content="距离、范数距离定义　　设$X$ 是一非空集合，任给定一对这一集合的元素$x,y$ ，都给定一个实数$d(x,y)$ 与它们对应，并且满足： 　　$(1)\ \ d(x,y)\geq0;d(x,y)&#x3D;0\Leftrightarrow x&#x3D;y; $">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-05-11T14:07:52.421Z">
+<meta property="article:modified_time" content="2020-05-11T14:18:47.452Z">
 <meta property="article:author" content="xipuhu">
+<meta property="article:tag" content="范数">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="xipuhu&#39;s blog" type="application/atom+xml">
@@ -170,273 +173,119 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="-books" class="article article-type- " itemscope itemprop="blogPost">
+            <article id="post-拓扑、距离、范数、内积" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      书~馆
+      拓扑、距离、范数、内积
     </h1>
   
 
         
-        <a href="/books/index.html" class="archive-article-date">
-  	<time datetime="2020-05-11T14:41:23.714Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-11</time>
+        <a href="/2020/05/11/%E6%8B%93%E6%89%91%E3%80%81%E8%B7%9D%E7%A6%BB%E3%80%81%E8%8C%83%E6%95%B0%E3%80%81%E5%86%85%E7%A7%AF/" class="archive-article-date">
+  	<time datetime="2020-05-11T14:07:52.421Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-11</time>
 </a>
         
       </header>
     
     <!-- 目录内容 -->
 
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+    <div id="toc-article" class="toc-article">
+        <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+        <strong class="toc-title">文章目录</strong>
+           <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#距离、范数"><span class="toc-number">1.</span> <span class="toc-text">距离、范数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#距离定义"><span class="toc-number">1.1.</span> <span class="toc-text">距离定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#范数定义"><span class="toc-number">1.2.</span> <span class="toc-text">范数定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结构"><span class="toc-number">1.3.</span> <span class="toc-text">结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#距离和范数的关系"><span class="toc-number">1.4.</span> <span class="toc-text">距离和范数的关系</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内积"><span class="toc-number">2.</span> <span class="toc-text">内积</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#定义"><span class="toc-number">2.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#内积空间"><span class="toc-number">2.2.</span> <span class="toc-text">内积空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#欧几里得空间"><span class="toc-number">2.3.</span> <span class="toc-text">欧几里得空间</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#实数坐标空间"><span class="toc-number">2.3.1.</span> <span class="toc-text">实数坐标空间</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#欧几里得结构"><span class="toc-number">2.3.2.</span> <span class="toc-text">欧几里得结构</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#完备性"><span class="toc-number">2.4.</span> <span class="toc-text">完备性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#希尔伯特空间和巴拿赫空间的由来"><span class="toc-number">2.5.</span> <span class="toc-text">希尔伯特空间和巴拿赫空间的由来</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拓扑"><span class="toc-number">3.</span> <span class="toc-text">拓扑</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#定义-1"><span class="toc-number">3.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#拓扑空间"><span class="toc-number">3.2.</span> <span class="toc-text">拓扑空间</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小结"><span class="toc-number">4.</span> <span class="toc-text">小结</span></a></li></ol>
+         </div>
+   <script type="text/javascript">
+    function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+        };
+    function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+        };
+   </script>
+      
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-    <p>智慧是一码事，精通事故又是一码事。————1万小时定律</p>
-</blockquote>
+        <h3 id="距离、范数"><a href="#距离、范数" class="headerlink" title="距离、范数"></a>距离、范数</h3><h4 id="距离定义"><a href="#距离定义" class="headerlink" title="距离定义"></a>距离定义</h4><p>　　设$X$ 是一非空集合，任给定一对这一集合的元素$x,y$ ，都给定一个实数$d(x,y)$ 与它们对应，并且满足：</p>
+<p>　　$(1)\ \ d(x,y)\geq0;d(x,y)=0\Leftrightarrow x=y; $ </p>
+<a id="more"></a>
 
-<style>
-    
-.hexo-douban-tabs {
-    margin-bottom: 15px;
-    margin-top: 15px;
-}
-
-.hexo-douban-tab {
-    padding: 5px;
-}
-
-.hexo-douban-active {
-    background: #657b83;
-    color: #fff;
-}
-
-.hexo-douban-item {
-    padding-bottom: 10px;
-    position: relative;
-    clear: both;
-    min-height: 170px;
-    padding: 10px 0;
-    border-bottom: 1px #ddd solid;
-}
-
-@media screen and (max-width: 600px) {
-    .hexo-douban-item {
-        width: 100%;
-    }
-}
-
-.hexo-douban-picture {
-    position: absolute;
-    left: 0;
-    top: 10px;
-    width: 100px;
-}
-
-.hexo-douban-info {
-    padding-left: 120px;
-}
-
-.hexo-douban-meta {
-    font-size: 12px;
-    padding-right: 10px;
-}
-
-.hexo-douban-comments {
-    font-size: 12px;
-}
-
-.hexo-douban-pagination {
-    margin-top: 15px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.hexo-douban-button {
-    padding: 5px;
-}
-
-.hexo-douban-button:hover {
-    background: #657b83;
-    color: #fff;
-}
-
-.hexo-douban-hide {
-    display: none;
-}
-
-.hexo-douban-show {
-    display: block;
-}
-
-
-</style>
-
-<div class="hexo-douban-tabs">
-    <a class="hexo-douban-tab" id="hexo-douban-tab1" href="javascript:;"
-       rel="external">
-        在读
-        (0)</a>
-    <a class="hexo-douban-tab" id="hexo-douban-tab2" href="javascript:;"
-       rel="external">
-        想读
-        (0)</a>
-    <a class="hexo-douban-tab" id="hexo-douban-tab3" href="javascript:;"
-       rel="external">
-        已读
-        (0)</a>
-</div>
-<div>
-    <div id="hexo-douban-item1">
-        
-        <div class="hexo-douban-pagination">
-    <a class="hexo-douban-button hexo-douban-firstpage" href="javascript:;"> 首页</a>
-    <a class="hexo-douban-button hexo-douban-previouspage" href="javascript:;">上一页</a>
-    <span class="hexo-douban-pagenum">2 / 3</span>
-    <a class="hexo-douban-button hexo-douban-nextpage" href="javascript:;">下一页</a>
-    <a class="hexo-douban-button hexo-douban-lastpage" href="javascript:;">尾页</a>
-</div>
-    </div>
-    <div id="hexo-douban-item2">
-        
-        <div class="hexo-douban-pagination">
-    <a class="hexo-douban-button hexo-douban-firstpage" href="javascript:;"> 首页</a>
-    <a class="hexo-douban-button hexo-douban-previouspage" href="javascript:;">上一页</a>
-    <span class="hexo-douban-pagenum">2 / 3</span>
-    <a class="hexo-douban-button hexo-douban-nextpage" href="javascript:;">下一页</a>
-    <a class="hexo-douban-button hexo-douban-lastpage" href="javascript:;">尾页</a>
-</div>
-
-    </div>
-    <div id="hexo-douban-item3">
-        
-        <div class="hexo-douban-pagination">
-    <a class="hexo-douban-button hexo-douban-firstpage" href="javascript:;"> 首页</a>
-    <a class="hexo-douban-button hexo-douban-previouspage" href="javascript:;">上一页</a>
-    <span class="hexo-douban-pagenum">2 / 3</span>
-    <a class="hexo-douban-button hexo-douban-nextpage" href="javascript:;">下一页</a>
-    <a class="hexo-douban-button hexo-douban-lastpage" href="javascript:;">尾页</a>
-</div>
-    </div>
-
-</div>
-
-<script>
-    /**
- * Created by myths on 18-2-8.
- */
-
-Element.prototype.siblings = function () {
-    var siblingElement = [];
-    var sibs = this.parentNode.children;
-    for (var i = 0; i < sibs.length; i++) {
-        if (sibs[i] !== this) {
-            siblingElement.push(sibs[i]);
-        }
-    }
-    return siblingElement;
-};
-function tabClick() {
-    //修改标签样式
-    this.classList.add('hexo-douban-active');
-    var sibs = this.siblings();
-    for (var j = 0; j < sibs.length; j++) {
-        sibs[j].classList.remove('hexo-douban-active');
-    }
-    //显示对应板块
-    var itemId = this.id.replace('tab', 'item');
-    var target = document.getElementById(itemId);
-    target.classList.remove('hexo-douban-hide');
-    target.classList.add('hexo-douban-show');
-    sibs = document.getElementById(itemId).siblings();
-    for (var k = 0; k < sibs.length; k++) {
-        sibs[k].classList.remove('hexo-douban-show');
-        sibs[k].classList.add('hexo-douban-hide');
-    }
-}
-var tabs = document.getElementsByClassName("hexo-douban-tab");
-for (var i = 0; i < tabs.length; i++) {
-    tabs[i].onclick = tabClick;
-    tabs[i].onclick.apply(tabs[i]);
-}
-tabs[2].click();
-
-    var firstpages = document.getElementsByClassName("hexo-douban-firstpage");
-var previouspages = document.getElementsByClassName("hexo-douban-previouspage");
-var nextpages = document.getElementsByClassName("hexo-douban-nextpage");
-var lastpages = document.getElementsByClassName("hexo-douban-lastpage");
-var pagenums = document.getElementsByClassName("hexo-douban-pagenum");
-
-function makePageNum(num, arr) {
-    return (num + 1) + ' / ' + (Math.ceil(arr.length / 10 === 0 ? 1 : Math.ceil(arr.length / 10)));
-}
-
-function firstBtn() {
-    var sibs = this.parentNode.siblings();
-    displayPage(sibs, 0);
-    this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText = makePageNum(0, sibs);
-}
-
-function previousBtn() {
-    var sibs = this.parentNode.siblings();
-    var currNum = this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText;
-    currNum = currNum.substr(0, currNum.indexOf('/') - 1);
-    currNum = parseInt(currNum, 10) - 1;
-    if (currNum > 0) {
-        currNum--;
-    }
-    displayPage(sibs, currNum);
-    this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText = makePageNum(currNum, sibs);
-}
-
-function nextBtn() {
-    var sibs = this.parentNode.siblings();
-    var currNum = this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText;
-    currNum = currNum.substr(0, currNum.indexOf('/') - 1);
-    currNum = parseInt(currNum, 10) - 1;
-    if (currNum < Math.ceil(sibs.length / 10) - 1) {
-        currNum++;
-    }
-    displayPage(sibs, currNum);
-    this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText = makePageNum(currNum, sibs);
-}
-
-function lastBtn() {
-    var sibs = this.parentNode.siblings();
-    displayPage(sibs, Math.ceil(sibs.length / 10) - 1);
-    this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText = makePageNum(Math.ceil(sibs.length / 10) - 1 === -1 ? 0 : Math.ceil(sibs.length / 10) - 1, sibs);
-}
-
-function displayPage(arr, num) {
-    for (var i = 0; i < arr.length; i++) {
-        if (Math.floor(i / 10) === num) {
-            arr[i].classList.remove('hexo-douban-hide');
-            var img = arr[i].getElementsByTagName('img')[0];
-            img.src = img.getAttribute('data-src');
-        } else {
-            arr[i].classList.add('hexo-douban-hide');
-        }
-    }
-}
-
-for (var i = 0; i < firstpages.length; i++) {
-
-    //add listener
-    firstpages[i].onclick = firstBtn;
-    previouspages[i].onclick = previousBtn;
-    nextpages[i].onclick = nextBtn;
-    lastpages[i].onclick = lastBtn;
-
-    //set page num
-    var size = pagenums[i].parentNode.siblings().length;
-    pagenums[i].innerText = '1 / ' + (Math.ceil(size / 10) === 0 ? 1 : Math.ceil(size / 10));
-    firstpages[i].click();
-}
-
-</script>
-
+<p>　　$(2)\ \  d(x,y)=d(y,x);$ </p>
+<p>　　$(3)\ \  d(x,y)\leq d(x,z)+d(z,y)$</p>
+<p>　　则称$d(x,y)$ 是这两点之间的距离。其中，(1)表示距离具有非负性；(2)表示距离具有对称性；(3)表示三个点构成的距离满足三角不等式。</p>
+<h4 id="范数定义"><a href="#范数定义" class="headerlink" title="范数定义"></a>范数定义</h4><p>　　设$||x||$ 是$R^n$ 的范数，若满足：</p>
+<p>　　$(1)\ \ ||x||\geq0, {\forall}x \in R^n; ||x||=0 \Leftrightarrow x=0;$</p>
+<p>　　$(2)\ \ ||\alpha x||=|\alpha|||x||,{\forall}\alpha \in R,x\in R^n;$</p>
+<p>　　$(3)\ \ ||x+y||\leq ||x||+||y||, {\forall}x,y\in R^n$</p>
+<p>　　<strong>注意：</strong> 可以简单看成到零点距离多了(2)，即范数$\subseteq$ 距离，也就是范数比距离更加具体了，约束条件更多了。</p>
+<h4 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h4><p>　　除了距离，我们还需要<strong>线性结构</strong> （先看二维向量）：向量的加法，数乘。<br>　　线性结构一般满足如下性质：加法的交换律、结合律、零元、负元、数乘的交换律、单位一、数乘与加法的结合律。<br>　　满足线性结构后的距离空间和范数空间就称为：线性度量空间、线性赋范空间。</p>
+<h4 id="距离和范数的关系"><a href="#距离和范数的关系" class="headerlink" title="距离和范数的关系"></a>距离和范数的关系</h4><p>　　（1）由范数可以定义距离：</p>
+<p>　　　　　　　　　　$d(x,y)=||x-y||$ </p>
+<p>　　（2）但由距离不一定可以定义范数，例如：$||x||=d(0,x)$ ，但是$||\alpha x||=d(0,\alpha x)\neq|\alpha|||x||$  </p>
+<p>　　（3）赋予范数或者距离的集合分别称为：赋范空间和度量空间</p>
+<p>　　（4）若在其上再加上线性结构就称为：线性赋范空间和线性度量空间。　</p>
+<h3 id="内积"><a href="#内积" class="headerlink" title="内积"></a>内积</h3><p> 　　赋范空间有向量的模长，即范数。但是还缺乏一个很重要的概念——两个向量的夹角，为克服这以缺陷，我们可以再引入内积空间。</p>
+<h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>　　设$(x,y)\in R$ ，且满足：<br>　　（1）对称性；<br>　　（2）对第一变元的线性性；<br>　　（3）正定性；<br>　　则称$(x,y)$ 为内积。</p>
+<h4 id="内积空间"><a href="#内积空间" class="headerlink" title="内积空间"></a>内积空间</h4><p>　　（1）内积可以诱导出范数：$||x||^2=(x,x)$ ;<br>　　（2）在线性空间上定义内积；其空间称为内积空间；<br>　　（3）内积可以在空间中建立欧几里得几何学(不具有完备性)，例如交角、垂直和投影等，故习惯上称其为欧几里得空间。</p>
+<h4 id="欧几里得空间"><a href="#欧几里得空间" class="headerlink" title="欧几里得空间"></a>欧几里得空间</h4><h5 id="实数坐标空间"><a href="#实数坐标空间" class="headerlink" title="实数坐标空间"></a>实数坐标空间</h5><p>　　以$R$ 表示实数域。对任意一个正整数$n$ ，实数的$n$ 元组的全体构成了$R$ 上的一个n维向量空间，用$R^n$ 来表示。有时称之为实数坐标空间。$R^n$ 中的元素写作$X=(x_1,x_2,\ldots,x_n)$ ，这里的$x_i$ 都是实数。$R^n$ 作为向量空间，其运算是这样定义的：<br>　　$x+y=(x_1+y_1,x_2+y_2,\dots ,x_n+y_n)$</p>
+<p>　　$ax=(ax_1,ax_2,\ldots,ax_n)$ </p>
+<p>　　通常引入实数坐标空间$R^n$的标准基：<br>　　$e_1=(1,0,\ldots,0)$ </p>
+<p>　　$e_2=(0,1,\ldots,0)$ </p>
+<p>　　　　$\vdots$ </p>
+<p>　　$e_n=(0,0,\ldots,1)$</p>
+<p>　　于是$R^n$ 中任意的向量可以表示成这样的形式：$x=\sum\limits_{i=1}^nx_ie_i$</p>
+<h5 id="欧几里得结构"><a href="#欧几里得结构" class="headerlink" title="欧几里得结构"></a>欧几里得结构</h5><p>　　至于欧几里得空间，则是在$R^n$ 上再添加一些内容：欧几里得结构。<br>　　为了做欧氏几何，人们希望能讨论两点间的<strong>距离</strong>，直线或向量间的<strong>夹角</strong> 。一个自然的方法是在$R^n$ 上，对任意两个向量$x,y$ 。引入它们的<strong>标准内积</strong> $(x,y)$ (一些文献上称为点积，记为$x\bullet y$)：</p>
+<p>　　$(x,y)=\sum\limits_{i=1}^n x_iy_i=x_1y_1+x_2y_2+\ldots+x_ny_n$ </p>
+<p>　　也就是说，$R^n$ 中的任意两个向量对应着一个实数值。我们把$R^n$ 及这样定义的内积，称为$R^n$ 上的<strong>欧几里得结构</strong> ；此时的$R^n$ 也被称为$n$ 维欧几里得空间。</p>
+<p>　　利用这个内积，可以建立<code>距离</code> 、<code>长度</code> 、<code>角度</code> 等概念：</p>
+<ul>
+<li>向量$x$ 的长度：$||x||=\sqrt{(x,x)}=\sqrt{\sum\limits_{i=1}^n(x_i)^2}$   ，这里的长度函数满足<strong>范数</strong> 所需的性质，故又称为$R^n$ 的欧氏范数。</li>
+<li>$x$ 和$y$ 所夹的内角以下列式子给出：$\theta=\cos^{-1}\Big(\frac{(x,y)}{||x||||y||}\Big)$ </li>
+<li>最后，可以用欧氏范数来定义$R^n$ 上的距离函数，或称度量：$d(x,y)=||x-y||=\sqrt{\sum\limits_{i=1}^n(x_i-y_i)^2}$ </li>
+</ul>
+<h4 id="完备性"><a href="#完备性" class="headerlink" title="完备性"></a>完备性</h4><p>　　完备空间或者完备度量空间是具有如下性质的空间：空间中的任何<code>柯西序列</code> <a href="在数学中，一个**柯西列**或**柯西数列**是指这样一个[数列](https://zh.wikipedia.org/wiki/%E6%95%B0%E5%88%97)，它的元素随着序数的增加而愈发靠近。更确切地说，在去掉有限个元素后，可以使得余下的元素中任何两点间的[距离](https://zh.wikipedia.org/wiki/%E8%B7%9D%E7%A6%BB)的最大值不超过任意给定的正数。柯西列是以数学家[奥古斯丁·路易·柯西](https://zh.wikipedia.org/wiki/%E5%A5%A7%E5%8F%A4%E6%96%AF%E4%B8%81%C2%B7%E8%B7%AF%E6%98%93%C2%B7%E6%9F%AF%E8%A5%BF)的名字命名的。">^ 1</a> 都收敛(也就是极限)在该空间之内。比如：</p>
+<ul>
+<li>有理数空间不是完备的，因为$\sqrt2$ 的有限位小数表示一个柯西序列，但是其极限$\sqrt2$ 不在有理数空间。</li>
+<li>实数空间是完备的。</li>
+<li>开区间(0,1)不是完备的。序列（1/2, 1/3,1/4,1/5,…）是柯西序列但其不收敛于（0，1）中的任何点。</li>
+</ul>
+<h4 id="希尔伯特空间和巴拿赫空间的由来"><a href="#希尔伯特空间和巴拿赫空间的由来" class="headerlink" title="希尔伯特空间和巴拿赫空间的由来"></a>希尔伯特空间和巴拿赫空间的由来</h4><p>　　（1）1904年-1910年希尔伯特引入无穷实数组并定义内积，其空间称为内积空间，再加上完备性，就称为希尔伯特空间（无穷维）。</p>
+<p>　　（2）1992年巴拿赫提出赋范空间，其完备的赋范空间称为巴拿赫空间；</p>
+<h3 id="拓扑"><a href="#拓扑" class="headerlink" title="拓扑"></a>拓扑</h3><p>　　欧几里得几何学需要内积，但连续的概念不需要内积，甚至不需要距离。例如：社交圈的描述，学号的指定是“连续”的。<br>　　记$x_0\in D \subset R,$</p>
+<p>　　　$O(x_0,\delta)={x;|x-x_0|&lt;\delta}$</p>
+<p>　　　$O(f(x_0),\varepsilon)={y,|y-f(x_0)|&lt;\varepsilon}$ </p>
+<p>　　那么可定义连续为：</p>
+<p>　　　${\forall}\varepsilon&gt;0,{\exists}\delta&gt;0,$</p>
+<p>　　　$f(O(x_0,\delta)\cap D)\subset O(f(x_0),\varepsilon)$ </p>
+<p>　　即，用开集可以定义连续。</p>
+<h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p>　　设$X$ 是任一集合$\tau \subset 2^x$ ，若满足：<br>　　（1）$\tau$ 内任意个集合的并仍属于$\tau$ ；<br>　　（2）$\tau$ 内有限个集合的交仍属于$\tau$ ；<br>　　（3）$X$ 和空集仍属于$\tau$ 。<br>　　则称$\tau$ 是$X$ 上的一个拓扑 。</p>
+<h4 id="拓扑空间"><a href="#拓扑空间" class="headerlink" title="拓扑空间"></a>拓扑空间</h4><p>　　（1）拓扑空间所研究的有一通行的形象说法：橡皮几何学。<br>　　（2）同胚：不产生新的断开和新的接触的图形变换称为同胚变换。<br>　　（3）拓扑学使分析、代数和几何结合的学科。</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>　　研究无穷维内积空间或者无穷维线性赋范空间中映射的数学分支叫<strong>泛函分析</strong> ，又分为线性泛函分析和非线性泛函分析；研究拓扑空间的数学分支叫拓扑学，又分为点集拓扑、代数拓扑和微分拓扑。</p>
+<p>　　拓扑、距离、范数、内积的关系如下：</p>
+<ul>
+<li><strong>范数</strong>可以定义为“强化”了的距离；</li>
+<li><strong>内积</strong>是较距离和范数有更多内涵；</li>
+<li><strong>拓扑</strong>是“弱化”了的距离；</li>
+<li>拓扑  $\supseteq$  距离  $\supseteq$  范数  $\supseteq$  内积 （可以这样类比：植物、水果、热带水果、芒果）；</li>
+<li>拓扑空间，度量空间，赋范空间，内积空间（已有线性结构）；</li>
+<li>拓扑线性空间，线性度量空间，线性赋范空间，内积空间；</li>
+<li>…，…，巴拿赫空间，希尔伯特空间。</li>
+</ul>
+<p>参考自：<a href="http://open.163.com/movie/2013/3/T/0/M8PTB0GHI_M8PTBUHT0.html" target="_blank" rel="noopener">http://open.163.com/movie/2013/3/T/0/M8PTB0GHI_M8PTBUHT0.html</a></p>
 
       
 
@@ -476,6 +325,17 @@ for (var i = 0; i < firstpages.length; i++) {
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">范数</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -526,7 +386,7 @@ for (var i = 0; i < firstpages.length; i++) {
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/books/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/11/%E6%8B%93%E6%89%91%E3%80%81%E8%B7%9D%E7%A6%BB%E3%80%81%E8%8C%83%E6%95%B0%E3%80%81%E5%86%85%E7%A7%AF/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -538,6 +398,25 @@ for (var i = 0; i < firstpages.length; i++) {
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2020/05/11/C++%E8%AF%AD%E5%8F%A5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          C++语句
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/05/11/Ubuntu16.04+CUDA8.0+caffe+tensorflow/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Ubuntu16.04+CUDA8.0+caffe+tensorflow</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -556,6 +435,32 @@ for (var i = 0; i < firstpages.length; i++) {
 </aside>
 
 
+
+  
+  
+  
+
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2020/05/11/%E6%8B%93%E6%89%91%E3%80%81%E8%B7%9D%E7%A6%BB%E3%80%81%E8%8C%83%E6%95%B0%E3%80%81%E5%86%85%E7%A7%AF/",
+  owner: 'xipuhu',
+  repo: 'xipuhu.github.io',
+  oauth: {
+    client_id: 'd83300a5ad321ac29c2e',
+    client_secret: 'df24bd6f636b537ddeb1df413a35a60059807d72',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -578,7 +483,7 @@ for (var i = 0; i < firstpages.length; i++) {
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

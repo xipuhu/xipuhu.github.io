@@ -6,17 +6,33 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>书~馆 | xipuhu&#39;s blog</title>
+  <title>RGB、HSV和lab | xipuhu&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="智慧是一码事，精通事故又是一码事。————1万小时定律         .hexo-douban-tabs {     margin-bottom: 15px;     margin-top: 15px; }  .hexo-douban-tab {     padding: 5px; }  .hexo-douban-active {     backgro">
-<meta property="og:type" content="website">
-<meta property="og:title" content="书~馆">
-<meta property="og:url" content="http://yoursite.com/books/index.html">
+  <meta name="description" content="RGB　　RGB颜色模式为光色三原色，它有R（红）、G（绿）、B（蓝）三个颜色通道，每个通道有256个颜色级别，单个通道以0-255数值表示，数值越大表示颜色输出越强。三个通道一起可以模拟出16777216种色彩。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RGB、HSV和lab">
+<meta property="og:url" content="http://yoursite.com/2020/05/09/RGB%E3%80%81HSV%E5%92%8CLAB/index.html">
 <meta property="og:site_name" content="xipuhu&#39;s blog">
-<meta property="og:description" content="智慧是一码事，精通事故又是一码事。————1万小时定律         .hexo-douban-tabs {     margin-bottom: 15px;     margin-top: 15px; }  .hexo-douban-tab {     padding: 5px; }  .hexo-douban-active {     backgro">
+<meta property="og:description" content="RGB　　RGB颜色模式为光色三原色，它有R（红）、G（绿）、B（蓝）三个颜色通道，每个通道有256个颜色级别，单个通道以0-255数值表示，数值越大表示颜色输出越强。三个通道一起可以模拟出16777216种色彩。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/RGB%E3%80%81HSV%E5%92%8Clab/00.jpg">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/RGB%E3%80%81HSV%E5%92%8Clab/01.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/RGB%E3%80%81HSV%E5%92%8Clab/02.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/RGB%E3%80%81HSV%E5%92%8Clab/03.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/RGB%E3%80%81HSV%E5%92%8Clab/04.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/RGB%E3%80%81HSV%E5%92%8Clab/05.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/RGB%E3%80%81HSV%E5%92%8Clab/06.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/RGB%E3%80%81HSV%E5%92%8Clab/07.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/RGB%E3%80%81HSV%E5%92%8Clab/08.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/RGB%E3%80%81HSV%E5%92%8Clab/09.jpg">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/RGB%E3%80%81HSV%E5%92%8Clab/11.jpg">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/RGB%E3%80%81HSV%E5%92%8Clab/10.png">
+<meta property="article:published_time" content="2020-05-09T00:14:37.854Z">
+<meta property="article:modified_time" content="2020-05-11T13:49:01.974Z">
 <meta property="article:author" content="xipuhu">
+<meta property="article:tag" content="色彩空间">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/RGB%E3%80%81HSV%E5%92%8Clab/00.jpg">
   
     <link rel="alternative" href="/atom.xml" title="xipuhu&#39;s blog" type="application/atom+xml">
   
@@ -170,274 +186,105 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="-books" class="article article-type- " itemscope itemprop="blogPost">
+            <article id="post-RGB、HSV和LAB" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      书~馆
+      RGB、HSV和lab
     </h1>
   
 
         
-        <a href="/books/index.html" class="archive-article-date">
-  	<time datetime="2020-05-11T14:41:23.714Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-11</time>
+        <a href="/2020/05/09/RGB%E3%80%81HSV%E5%92%8CLAB/" class="archive-article-date">
+  	<time datetime="2020-05-09T00:14:37.854Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-09</time>
 </a>
         
       </header>
     
     <!-- 目录内容 -->
 
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+    <div id="toc-article" class="toc-article">
+        <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+        <strong class="toc-title">文章目录</strong>
+           <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#RGB"><span class="toc-number">1.</span> <span class="toc-text">RGB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HSV"><span class="toc-number">2.</span> <span class="toc-text">HSV</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#色彩的三要素"><span class="toc-number">2.1.</span> <span class="toc-text">色彩的三要素</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lab"><span class="toc-number">3.</span> <span class="toc-text">lab</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#色彩表达范围"><span class="toc-number">4.</span> <span class="toc-text">色彩表达范围</span></a></li></ol>
+         </div>
+   <script type="text/javascript">
+    function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+        };
+    function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+        };
+   </script>
+      
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-    <p>智慧是一码事，精通事故又是一码事。————1万小时定律</p>
-</blockquote>
+        <h3 id="RGB"><a href="#RGB" class="headerlink" title="RGB"></a>RGB</h3><p>　　RGB颜色模式为光色三原色，它有R（红）、G（绿）、B（蓝）三个颜色通道，每个通道有256个颜色级别，单个通道以0-255数值表示，数值越大表示颜色输出越强。三个通道一起可以模拟出<strong>16777216种色彩</strong>。</p>
+<a id="more"></a>
 
-<style>
-    
-.hexo-douban-tabs {
-    margin-bottom: 15px;
-    margin-top: 15px;
-}
+<div class="blockImg"><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/RGB%E3%80%81HSV%E5%92%8Clab/00.jpg" width=40% height=40%></div>
 
-.hexo-douban-tab {
-    padding: 5px;
-}
+<p>　　RGB是对机器很友好的色彩模式，适合在屏幕上显示，但并不够人性化，因为我们对色彩的认识往往是”<strong>什么颜色</strong>？<strong>鲜艳不鲜艳？亮还是暗？”。</strong></p>
+<h3 id="HSV"><a href="#HSV" class="headerlink" title="HSV"></a>HSV</h3><p>　　由于RGB不够“人性化”，为了弥补这个缺陷，HSL 模式和 HSV(HSB) 就基于 RGB ，作为一个更方便友好的方法创建出来了，HSV 分别为<span class="blockFont">色相</span>，<span class="blockFont">饱和度</span>，<span class="blockFont">明度</span>。</p>
+<div class="blockImg"><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/RGB%E3%80%81HSV%E5%92%8Clab/01.png" width=50% height=50%></div>
 
-.hexo-douban-active {
-    background: #657b83;
-    color: #fff;
-}
+<h4 id="色彩的三要素"><a href="#色彩的三要素" class="headerlink" title="色彩的三要素"></a>色彩的三要素</h4><p><strong>色相（表，表现）</strong>：即色彩的相貌和特征。自然界中色彩的种类很多，色相指色彩的种类和名称。如；红、橙、黄、绿、青、蓝、紫等等颜色的种类变化就叫色相。</p>
+<div class="blockImg"><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/RGB%E3%80%81HSV%E5%92%8Clab/02.png" width=50% height=50%></div>
 
-.hexo-douban-item {
-    padding-bottom: 10px;
-    position: relative;
-    clear: both;
-    min-height: 170px;
-    padding: 10px 0;
-    border-bottom: 1px #ddd solid;
-}
+<p>　　HSV的H(hue)分量，代表的是人眼所能感知的颜色范围，这些颜色分布在一个平面的色相环上，取值范围是0°到360°的圆心角，每个角度可以代表一种颜色。色相值的意义在于，我们可以在不改变光感的情况下，通过旋转色相环来改变颜色。在实际应用中，我们需要记住色相环上的六大主色，用作基本参照：<strong>360°/0°红</strong>、<strong>60°黄</strong>、<strong>120°绿</strong>、<strong>180°青</strong>、<strong>240°蓝</strong>、<strong>300°洋红</strong>，它们在色相环上按照60°圆心角的间隔排列。</p>
+<p><strong>明度（表，面子）：</strong>指色彩的<strong>亮度</strong>或明度，也叫明亮度。颜色有深浅、明暗的变化。比如，深黄、中黄、淡黄、柠檬黄等黄颜色在明度上就不一样，紫红、深红、玫瑰红、大红、朱红、桔红等红颜色在亮度上也不尽相同。这些颜色在明暗、深浅上的不同变化，也就是色彩的又一重要特征一一明度变化。</p>
+<div class="blockImg" style="width:600px;height:120px;" ><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/RGB%E3%80%81HSV%E5%92%8Clab/03.png"></div>
 
-@media screen and (max-width: 600px) {
-    .hexo-douban-item {
-        width: 100%;
-    }
-}
+<p>　　HSV的V(value)分量，指的是色彩的明度，作用是控制色彩的明暗变化。它同样使用了0%至100%的取值范围。数值越小，色彩越暗，越接近于<strong>黑色</strong>；数值越大，色彩越亮，越接近于<strong>白色</strong>。</p>
+<p><strong>纯度（里，里子）</strong>：指色彩的鲜艳程度，也叫<strong>饱和度</strong>。原色是纯度最高的色彩。颜色混合的次数越多，纯度越低，反之，纯度则高。原色中混入补色，纯度会立即降低、变灰。物体本身的色彩，也有纯度高低之分，西红柿与苹果相比，西红柿的纯度高些，苹果的纯度低些。有好的表现，必然有一定的面子跟里子做基础。</p>
+<div class="blockImg" style="width:600px;height:120px;" ><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/RGB%E3%80%81HSV%E5%92%8Clab/04.png"></div>
 
-.hexo-douban-picture {
-    position: absolute;
-    left: 0;
-    top: 10px;
-    width: 100px;
-}
+<p>　　HSV的S(saturation)分量，指的是色彩的饱和度，它用0%至100%的值描述了相同色相、明度下色彩纯度的变化。数值越大，颜色中的<strong>灰色</strong>越少，颜色越<strong>鲜艳</strong>，呈现一种从理性(灰度)到感性(纯色)的变化。</p>
+<p>　　在图像处理中，HSV和RGB相比，有一个优点：<span class="blockFont">可以单独处理色调H的值</span>，而不会影响到明度和纯度。由于RGB模式下的颜色是由R、G和B三个分量来共同决定的，并不能只通过操作一个分量来改变颜色，而HSV中颜色只取决于H的值，所以这是HSV在图像处理中优于RGB的一点。</p>
+<p>　　比如在车牌识别中，我们首先需要进行颜色定位(车牌的颜色一般只有两个颜色：蓝色和黄色)，如果采用RGB这个过程将会很复杂，因为要同时考虑RGB三个因素变量，而采用HSV则只需要考虑H这个变量，<a href="https://www.cnblogs.com/subconscious/p/4351007.html" target="_blank" rel="noopener">颜色定位与偏斜扭转</a>。</p>
+<p>　　HSV也通常用于确定想要跟踪的颜色范围（例如视频流中的绿球）：</p>
+<div class="blockImg"><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/RGB%E3%80%81HSV%E5%92%8Clab/05.png" width = 50% height = 50%></div>
 
-.hexo-douban-info {
-    padding-left: 120px;
-}
+<p>　　还可以使用HSV提取颜色直方图，来量化图像的内容甚至构建图像搜索引擎。</p>
+<h3 id="lab"><a href="#lab" class="headerlink" title="lab"></a>lab</h3><p>　　LAB颜色模式，L表示明度通道，它记录头像中的细节，不记录颜色。a通道表示从红色到绿色，b通道表示从蓝色到黄色。LAB颜色模式把图像中的颜色和细节分开记录，我们在后期中可以利用它的这个特性。</p>
+<div class="blockImg"><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/RGB%E3%80%81HSV%E5%92%8Clab/06.png" width=50% height=50%></div>
 
-.hexo-douban-meta {
-    font-size: 12px;
-    padding-right: 10px;
-}
+<p>　　LAB颜色模式中有3个通道：</p>
+<ol>
+<li>L明度通道：主要是包含了图片中的黑白灰区域；</li>
+<li>A通道：主要是包含了图片中从绿色信息到洋红信息的色彩区域（绿色为暗调，洋红色为高光）；</li>
+<li>B通道：主要是包含了图片中从蓝色信息到黄色信息的色彩区域（蓝色为暗调，黄色为高光）。</li>
+</ol>
+<p><strong>对于a、b通道的理解：</strong></p>
+<p>　　把红到绿之间的颜色层级映射到黑白上，纯红为纯白，纯绿为纯黑，半红半绿的映射为灰色，此为<strong>a通道</strong>：</p>
+<div class="blockImg" style="width:300px;height:120px;" ><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/RGB%E3%80%81HSV%E5%92%8Clab/07.png"></div>
 
-.hexo-douban-comments {
-    font-size: 12px;
-}
+<p>同理，把黄到蓝之间的颜色层级映射到黑白上，纯黄为纯白，纯蓝为纯黑，半黄半蓝的映射为灰色。此为b通道：</p>
+<div class="blockImg" style="width:300px;height:120px;" ><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/RGB%E3%80%81HSV%E5%92%8Clab/08.png"></div>
 
-.hexo-douban-pagination {
-    margin-top: 15px;
-    text-align: center;
-    margin-bottom: 10px;
-}
+<p>　　lab与rgb有本质的区别：lab的三个通道分别代表，l是明度，a是红绿，b是黄蓝。在lab模式下的曲线，因为明度是单独保存在l通道中的，所以我们可以在不改变色彩信息的前题下调整明度。同样的，我们也可以不改变明度的前题下调整色彩。这是rgb模式下的曲线无法做到的，因为rgb的三个通道分别保存的是红绿蓝三原色。</p>
+<p>　　比如在lab模式下对一张图片进行调整：</p>
+<div class="blockImg"><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/RGB%E3%80%81HSV%E5%92%8Clab/09.jpg" width=50% height=50%></div>
 
-.hexo-douban-button {
-    padding: 5px;
-}
+<p>　　其调整的效果如下：</p>
+<div class="blockImg"><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/RGB%E3%80%81HSV%E5%92%8Clab/11.jpg" width=50% height=50%></div>
 
-.hexo-douban-button:hover {
-    background: #657b83;
-    color: #fff;
-}
-
-.hexo-douban-hide {
-    display: none;
-}
-
-.hexo-douban-show {
-    display: block;
-}
-
-
-</style>
-
-<div class="hexo-douban-tabs">
-    <a class="hexo-douban-tab" id="hexo-douban-tab1" href="javascript:;"
-       rel="external">
-        在读
-        (0)</a>
-    <a class="hexo-douban-tab" id="hexo-douban-tab2" href="javascript:;"
-       rel="external">
-        想读
-        (0)</a>
-    <a class="hexo-douban-tab" id="hexo-douban-tab3" href="javascript:;"
-       rel="external">
-        已读
-        (0)</a>
-</div>
-<div>
-    <div id="hexo-douban-item1">
-        
-        <div class="hexo-douban-pagination">
-    <a class="hexo-douban-button hexo-douban-firstpage" href="javascript:;"> 首页</a>
-    <a class="hexo-douban-button hexo-douban-previouspage" href="javascript:;">上一页</a>
-    <span class="hexo-douban-pagenum">2 / 3</span>
-    <a class="hexo-douban-button hexo-douban-nextpage" href="javascript:;">下一页</a>
-    <a class="hexo-douban-button hexo-douban-lastpage" href="javascript:;">尾页</a>
-</div>
-    </div>
-    <div id="hexo-douban-item2">
-        
-        <div class="hexo-douban-pagination">
-    <a class="hexo-douban-button hexo-douban-firstpage" href="javascript:;"> 首页</a>
-    <a class="hexo-douban-button hexo-douban-previouspage" href="javascript:;">上一页</a>
-    <span class="hexo-douban-pagenum">2 / 3</span>
-    <a class="hexo-douban-button hexo-douban-nextpage" href="javascript:;">下一页</a>
-    <a class="hexo-douban-button hexo-douban-lastpage" href="javascript:;">尾页</a>
-</div>
-
-    </div>
-    <div id="hexo-douban-item3">
-        
-        <div class="hexo-douban-pagination">
-    <a class="hexo-douban-button hexo-douban-firstpage" href="javascript:;"> 首页</a>
-    <a class="hexo-douban-button hexo-douban-previouspage" href="javascript:;">上一页</a>
-    <span class="hexo-douban-pagenum">2 / 3</span>
-    <a class="hexo-douban-button hexo-douban-nextpage" href="javascript:;">下一页</a>
-    <a class="hexo-douban-button hexo-douban-lastpage" href="javascript:;">尾页</a>
-</div>
-    </div>
-
-</div>
-
-<script>
-    /**
- * Created by myths on 18-2-8.
- */
-
-Element.prototype.siblings = function () {
-    var siblingElement = [];
-    var sibs = this.parentNode.children;
-    for (var i = 0; i < sibs.length; i++) {
-        if (sibs[i] !== this) {
-            siblingElement.push(sibs[i]);
-        }
-    }
-    return siblingElement;
-};
-function tabClick() {
-    //修改标签样式
-    this.classList.add('hexo-douban-active');
-    var sibs = this.siblings();
-    for (var j = 0; j < sibs.length; j++) {
-        sibs[j].classList.remove('hexo-douban-active');
-    }
-    //显示对应板块
-    var itemId = this.id.replace('tab', 'item');
-    var target = document.getElementById(itemId);
-    target.classList.remove('hexo-douban-hide');
-    target.classList.add('hexo-douban-show');
-    sibs = document.getElementById(itemId).siblings();
-    for (var k = 0; k < sibs.length; k++) {
-        sibs[k].classList.remove('hexo-douban-show');
-        sibs[k].classList.add('hexo-douban-hide');
-    }
-}
-var tabs = document.getElementsByClassName("hexo-douban-tab");
-for (var i = 0; i < tabs.length; i++) {
-    tabs[i].onclick = tabClick;
-    tabs[i].onclick.apply(tabs[i]);
-}
-tabs[2].click();
-
-    var firstpages = document.getElementsByClassName("hexo-douban-firstpage");
-var previouspages = document.getElementsByClassName("hexo-douban-previouspage");
-var nextpages = document.getElementsByClassName("hexo-douban-nextpage");
-var lastpages = document.getElementsByClassName("hexo-douban-lastpage");
-var pagenums = document.getElementsByClassName("hexo-douban-pagenum");
-
-function makePageNum(num, arr) {
-    return (num + 1) + ' / ' + (Math.ceil(arr.length / 10 === 0 ? 1 : Math.ceil(arr.length / 10)));
-}
-
-function firstBtn() {
-    var sibs = this.parentNode.siblings();
-    displayPage(sibs, 0);
-    this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText = makePageNum(0, sibs);
-}
-
-function previousBtn() {
-    var sibs = this.parentNode.siblings();
-    var currNum = this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText;
-    currNum = currNum.substr(0, currNum.indexOf('/') - 1);
-    currNum = parseInt(currNum, 10) - 1;
-    if (currNum > 0) {
-        currNum--;
-    }
-    displayPage(sibs, currNum);
-    this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText = makePageNum(currNum, sibs);
-}
-
-function nextBtn() {
-    var sibs = this.parentNode.siblings();
-    var currNum = this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText;
-    currNum = currNum.substr(0, currNum.indexOf('/') - 1);
-    currNum = parseInt(currNum, 10) - 1;
-    if (currNum < Math.ceil(sibs.length / 10) - 1) {
-        currNum++;
-    }
-    displayPage(sibs, currNum);
-    this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText = makePageNum(currNum, sibs);
-}
-
-function lastBtn() {
-    var sibs = this.parentNode.siblings();
-    displayPage(sibs, Math.ceil(sibs.length / 10) - 1);
-    this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText = makePageNum(Math.ceil(sibs.length / 10) - 1 === -1 ? 0 : Math.ceil(sibs.length / 10) - 1, sibs);
-}
-
-function displayPage(arr, num) {
-    for (var i = 0; i < arr.length; i++) {
-        if (Math.floor(i / 10) === num) {
-            arr[i].classList.remove('hexo-douban-hide');
-            var img = arr[i].getElementsByTagName('img')[0];
-            img.src = img.getAttribute('data-src');
-        } else {
-            arr[i].classList.add('hexo-douban-hide');
-        }
-    }
-}
-
-for (var i = 0; i < firstpages.length; i++) {
-
-    //add listener
-    firstpages[i].onclick = firstBtn;
-    previouspages[i].onclick = previousBtn;
-    nextpages[i].onclick = nextBtn;
-    lastpages[i].onclick = lastBtn;
-
-    //set page num
-    var size = pagenums[i].parentNode.siblings().length;
-    pagenums[i].innerText = '1 / ' + (Math.ceil(size / 10) === 0 ? 1 : Math.ceil(size / 10));
-    firstpages[i].click();
-}
-
-</script>
-
-
+<h3 id="色彩表达范围"><a href="#色彩表达范围" class="headerlink" title="色彩表达范围"></a>色彩表达范围</h3><p>　　在<strong>表达色彩范围</strong>上，最全的是<span class="blockFont">Lab模式</span>，其次是<span class="blockFont">RGB模式</span>，最窄的是<span class="blockFont">CMYK模式</span>。也就是说Lab模式所定义的色彩最多，且与光线及设备无关，并且处理速度与RGB模式同样快，比CMYK模式快数倍。因此，您可放心大胆的在图像编辑中使用Lab模式，而且，Lab模式保证在转换成CMYK模式时色彩最少丢失或被替代。因此，从理论上讲最佳避免色彩损失的方法是：应用Lab模式编辑图像，再转换CMYK模式打印。</p>
+<div class="blockImg"><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/RGB%E3%80%81HSV%E5%92%8Clab/10.png" width=50% height=50%></div>
       
 
       
@@ -476,7 +323,29 @@ for (var i = 0; i < firstpages.length; i++) {
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">色彩空间</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/计算机视觉//" class="article-tag-list-link color1">计算机视觉</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -526,7 +395,7 @@ for (var i = 0; i < firstpages.length; i++) {
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/books/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/09/RGB%E3%80%81HSV%E5%92%8CLAB/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -538,6 +407,25 @@ for (var i = 0; i < firstpages.length; i++) {
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2020/05/09/Vim%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA(markdown+YouCompleteMe+Ultisnips)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Vim环境搭建(markdown+YouCompleteMe+Ultisnips)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/05/09/Git%E4%B8%8EGithub/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Git与Github</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -556,6 +444,32 @@ for (var i = 0; i < firstpages.length; i++) {
 </aside>
 
 
+
+  
+  
+  
+
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2020/05/09/RGB%E3%80%81HSV%E5%92%8CLAB/",
+  owner: 'xipuhu',
+  repo: 'xipuhu.github.io',
+  oauth: {
+    client_id: 'd83300a5ad321ac29c2e',
+    client_secret: 'df24bd6f636b537ddeb1df413a35a60059807d72',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -578,7 +492,7 @@ for (var i = 0; i < firstpages.length; i++) {
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
