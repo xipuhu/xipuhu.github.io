@@ -476,29 +476,31 @@
 
 
   
-  
-  
-
-  
-
-  
-
-  
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
-<script src="https://jjeejj.github.io/js/gitment.js"></script>
-<script>
-var gitment = new Gitment({
-  id: "http://yoursite.com/2020/05/09/Vim%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA(markdown+YouCompleteMe+Ultisnips)/",
-  owner: 'xipuhu',
-  repo: 'blog_comment',
-  oauth: {
-    client_id: 'cf744186301da6f1ef2d',
-    client_secret: '5a2a0bab05819bc3be53a2de66383ab641859b40',
-  },
-})
-gitment.render('gitment-ctn')
+  <div id="gitalk-container" style="padding: 0px 30px 0px 46px;"></div> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+var gitalk = new Gitalk({
+        clientID:  'cf744186301da6f1ef2d', 
+        clientSecret: '5a2a0bab05819bc3be53a2de66383ab641859b40',
+        id: window.location.pathname,
+        repo: 'blog_comment', 
+        owner: 'xipuhu', 
+        admin: 'xipuhu', 
+        distractionFreeMode: 'true',
+     })
+gitalk.render('gitalk-container')
 </script>
+  
+
+  
+  
+  
+
+  
+
+  
+
   
 
 
@@ -633,19 +635,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vim</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">深度学习框架</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">范数</a>
+                <a href="javascript:void(0)" class="js-tag color4">vim</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">范数</a>
               </li>
             
             <div class="clearfix"></div>
