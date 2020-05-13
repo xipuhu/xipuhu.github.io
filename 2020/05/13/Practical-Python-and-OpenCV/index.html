@@ -6,17 +6,47 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: git | xipuhu&#39;s blog</title>
+  <title>Practical Python and OpenCV | xipuhu&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="“The secret of getting ahead is to get started.”   Mark Twain">
-<meta property="og:type" content="website">
-<meta property="og:title" content="xipuhu&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/tags/git/index.html">
+  <meta name="description" content="Chapter 3 – loading,displaying, and saving1、参数解析库argparse的使用:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Practical Python and OpenCV">
+<meta property="og:url" content="http://yoursite.com/2020/05/13/Practical-Python-and-OpenCV/index.html">
 <meta property="og:site_name" content="xipuhu&#39;s blog">
-<meta property="og:description" content="“The secret of getting ahead is to get started.”   Mark Twain">
+<meta property="og:description" content="Chapter 3 – loading,displaying, and saving1、参数解析库argparse的使用:">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/01.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/02.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/03.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/04.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/05.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/06.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/07.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/08.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/09.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/10.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/11.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/12.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/13.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/14.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/15.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/16.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/17.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/18.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/19.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/20.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/22.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/23.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/25.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/26.png">
+<meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/27.png">
+<meta property="article:published_time" content="2020-05-13T12:47:49.402Z">
+<meta property="article:modified_time" content="2020-05-13T13:12:10.624Z">
 <meta property="article:author" content="xipuhu">
+<meta property="article:tag" content="图像处理">
+<meta property="article:tag" content="Opencv">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/01.png">
   
     <link rel="alternative" href="/atom.xml" title="xipuhu&#39;s blog" type="application/atom+xml">
   
@@ -170,75 +200,431 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Practical-Python-and-OpenCV" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/09/Git%E4%B8%8EGithub/" class="archive-article-date">
-  	<time datetime="2020-05-09T00:14:31.591Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-09</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/09/Git%E4%B8%8EGithub/">Git与Github</a>
+    <h1 class="article-title" itemprop="name">
+      Practical Python and OpenCV
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/05/13/Practical-Python-and-OpenCV/" class="archive-article-date">
+  	<time datetime="2020-05-13T12:47:49.402Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-13</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+    <div id="toc-article" class="toc-article">
+        <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+        <strong class="toc-title">文章目录</strong>
+           <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Chapter-3-–-loading-displaying-and-saving"><span class="toc-number">1.</span> <span class="toc-text">Chapter 3 – loading,displaying, and saving</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Chapter-4-–-Image-Basics"><span class="toc-number">2.</span> <span class="toc-text">Chapter 4 – Image Basics</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#关于图像坐标的两个问题"><span class="toc-number">2.1.</span> <span class="toc-text">关于图像坐标的两个问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Chapter-5-–-Drawing"><span class="toc-number">3.</span> <span class="toc-text">Chapter 5 – Drawing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Chapter-6-–-Image-Processing"><span class="toc-number">4.</span> <span class="toc-text">Chapter 6 – Image Processing</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Transformations"><span class="toc-number">4.1.</span> <span class="toc-text">Transformations</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Image-Arithmetic"><span class="toc-number">4.2.</span> <span class="toc-text">Image Arithmetic</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Bitwise-operations"><span class="toc-number">4.3.</span> <span class="toc-text">Bitwise operations</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Masking"><span class="toc-number">4.4.</span> <span class="toc-text">Masking</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Color-Spaces"><span class="toc-number">4.5.</span> <span class="toc-text">Color Spaces</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Splitting-and-Merging-Channels"><span class="toc-number">4.6.</span> <span class="toc-text">Splitting and Merging Channels</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Chapter-7-–-Histograms"><span class="toc-number">5.</span> <span class="toc-text">Chapter 7 – Histograms</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#直方图类型"><span class="toc-number">5.1.</span> <span class="toc-text">直方图类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#一维直方图（只考虑图像的一个特征）"><span class="toc-number">5.1.1.</span> <span class="toc-text">一维直方图（只考虑图像的一个特征）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#二维直方图（考虑图像的两个特征）"><span class="toc-number">5.1.2.</span> <span class="toc-text">二维直方图（考虑图像的两个特征）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#直方图均衡化"><span class="toc-number">5.2.</span> <span class="toc-text">直方图均衡化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Chapter-8-–-Smoothing-and-Blurring"><span class="toc-number">6.</span> <span class="toc-text">Chapter 8 – Smoothing and Blurring</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Averaging"><span class="toc-number">6.1.</span> <span class="toc-text">Averaging</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Gaussian"><span class="toc-number">6.2.</span> <span class="toc-text">Gaussian</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Median"><span class="toc-number">6.3.</span> <span class="toc-text">Median</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Bilateral"><span class="toc-number">6.4.</span> <span class="toc-text">Bilateral</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Chapter-9-–-Thresholding"><span class="toc-number">7.</span> <span class="toc-text">Chapter 9 – Thresholding</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Simple-Thresholding"><span class="toc-number">7.1.</span> <span class="toc-text">Simple Thresholding</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Adaptive-Thresholding"><span class="toc-number">7.2.</span> <span class="toc-text">Adaptive Thresholding</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Otsu-and-Riddler-Calvard"><span class="toc-number">7.3.</span> <span class="toc-text">Otsu and Riddler-Calvard</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Chapter-10-–-Gradients-and-Edge-Detection"><span class="toc-number">8.</span> <span class="toc-text">Chapter 10 – Gradients and Edge Detection</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Laplacian-and-Sobel"><span class="toc-number">8.1.</span> <span class="toc-text">Laplacian and Sobel</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Canny-Edge-Detector"><span class="toc-number">8.2.</span> <span class="toc-text">Canny Edge Detector</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Chapter-11-–-Contours"><span class="toc-number">9.</span> <span class="toc-text">Chapter 11 – Contours</span></a></li></ol>
+         </div>
+   <script type="text/javascript">
+    function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+        };
+    function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+        };
+   </script>
+      
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Chapter-3-–-loading-displaying-and-saving"><a href="#Chapter-3-–-loading-displaying-and-saving" class="headerlink" title="Chapter 3 – loading,displaying, and saving"></a>Chapter 3 – loading,displaying, and saving</h3><p>1、参数解析库argparse的使用:</p>
+<a id="more"></a>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ap = argparse.ArgumentParser() </span><br><span class="line">ap.add_argument(<span class="string">"-i"</span>, <span class="string">"--image"</span>, required = <span class="literal">True</span>,help = <span class="string">"Path to the image"</span>) </span><br><span class="line">args = vars(ap.parse_args())</span><br></pre></td></tr></table></figure>
+
+<p>2、loading :</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">image = cv2.imread(args[<span class="string">"image"</span>])</span><br></pre></td></tr></table></figure>
+
+<p>3、displaying:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cv2.imshow(<span class="string">"Image"</span>, image)  </span><br><span class="line">cv2.waitkey(<span class="number">0</span>)   　　<span class="comment"># 必须加上，不然图像显示会闪</span></span><br></pre></td></tr></table></figure>
+
+<p>4、saving:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv2.imwrite(<span class="string">"newimage.jpg"</span>, image)</span><br></pre></td></tr></table></figure>
+
+<p>5、一种打印格式:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"height: &#123;&#125; pixels"</span>.format(image.shape[<span class="number">0</span>]))</span><br></pre></td></tr></table></figure>
+
+<h3 id="Chapter-4-–-Image-Basics"><a href="#Chapter-4-–-Image-Basics" class="headerlink" title="Chapter 4 – Image Basics"></a>Chapter 4 – Image Basics</h3><h4 id="关于图像坐标的两个问题"><a href="#关于图像坐标的两个问题" class="headerlink" title="关于图像坐标的两个问题"></a>关于图像坐标的两个问题</h4><p>1、图像的原点(0, 0)是从图像的左上角开始，随着我们向右和向下移动，图像会增加：</p>
+<div class="blockImg"><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/01.png"></div>
+
+<p>2、当我们使用<strong>(x, y)</strong>来指定像素的时候，在代码中，x表示numpy矩阵中列数(col)，y表示numpy矩阵中的行数(row)，<span class="blockFont">即图像的width和height分别对应于矩阵的第二维shape[1]和第一维shape[0]</span>。</p>
+<h3 id="Chapter-5-–-Drawing"><a href="#Chapter-5-–-Drawing" class="headerlink" title="Chapter 5 – Drawing"></a>Chapter 5 – Drawing</h3><p>1、line:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">canvas = np.zeros((<span class="number">300</span>, <span class="number">300</span>, <span class="number">3</span>), dtype = <span class="string">"uint8"</span>)</span><br><span class="line">green = (<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>)</span><br><span class="line">cv2.line(canvas, (<span class="number">0</span>, <span class="number">0</span>), (<span class="number">300</span>, <span class="number">300</span>), green)</span><br></pre></td></tr></table></figure>
+
+<p>2、rectangle：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cv2.rectangle(canvas, (<span class="number">50</span>, <span class="number">200</span>), (<span class="number">200</span>, <span class="number">225</span>), red, <span class="number">5</span>)　　  <span class="comment"># 最后一个参数5表示画矩形的线的粗细</span></span><br><span class="line">cv2.rectangle(canvas, (<span class="number">200</span>, <span class="number">50</span>), (<span class="number">225</span>, <span class="number">125</span>), blue, <span class="number">-1</span>)　　 <span class="comment"># -1表示以填充方式画矩形</span></span><br></pre></td></tr></table></figure>
+
+<p>3、circle：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv2.circle(canvas, (centerX, centerY), r, white)</span><br></pre></td></tr></table></figure>
+
+<p>4、枚举类型<strong>enumerate</strong>的使用：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (row, y) <span class="keyword">in</span> enumerate(range(<span class="number">0</span>, <span class="number">10</span>, <span class="number">2</span>)) </span><br><span class="line">print(row,y)　　<span class="comment"># (0, 0) (1, 2) (2, 4) (3, 6) (4, 8)</span></span><br></pre></td></tr></table></figure>
+
+<p>最后的效果图如下：</p>
+<div class="blockImg"><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/02.png"></div>
+
+
+<h3 id="Chapter-6-–-Image-Processing"><a href="#Chapter-6-–-Image-Processing" class="headerlink" title="Chapter 6 – Image Processing"></a>Chapter 6 – Image Processing</h3><h4 id="Transformations"><a href="#Transformations" class="headerlink" title="Transformations"></a>Transformations</h4><p>1、Translation：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">M = np.float32([[<span class="number">1</span>, <span class="number">0</span>, <span class="number">25</span>], [<span class="number">0</span>, <span class="number">1</span>, <span class="number">50</span>]]) 　<span class="comment"># 第一个参数表示左右移动(正值为右)，第二个参数表示上下移动(正值为下)</span></span><br><span class="line">shifted = cv2.warpAffine(image, M, (image.shape[<span class="number">1</span>], image.shape[<span class="number">0</span>])) <span class="comment"># shape[1]表示图像长度，shape[0]表示图像高度</span></span><br><span class="line">cv2.imshow(<span class="string">"Shifted Down and Right"</span>, shifted)</span><br></pre></td></tr></table></figure>
+
+<div class="blockImg"><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/03.png"></div>
+
+<p>2、Roation：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(h, w) = image.shape[:<span class="number">2</span>] 　　<span class="comment"># w = shape[1] 　h=shape[0]</span></span><br><span class="line">center = (w // <span class="number">2</span>, h // <span class="number">2</span>)</span><br><span class="line">M = cv2.getRotationMatrix2D(center, <span class="number">45</span>, <span class="number">1.0</span>) 　　<span class="comment"># 45表示度数，正值表示逆时针旋转，负值表示顺时针旋转</span></span><br><span class="line">rotated = cv2.warpAffine(image, M, (w, h))</span><br><span class="line">cv2.imshow(<span class="string">"Rotated by 45 Degrees"</span>, rotated)</span><br></pre></td></tr></table></figure>
+
+<div class="blockImg"><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/04.png" width=50% height=50%></div>
+
+<p>3、Resizing：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">r = <span class="number">50.0</span> / image.shape[<span class="number">0</span>]</span><br><span class="line">dim = (int(image.shape[<span class="number">1</span>] * r), <span class="number">50</span>)   <span class="comment"># 使改变后的长宽比例和原来保持一致</span></span><br><span class="line"></span><br><span class="line">resized = cv2.resize(image, dim, interpolation = cv2.INTER_AREA)</span><br><span class="line">cv2.imshow(<span class="string">"Resized (Height)"</span>, resized)</span><br></pre></td></tr></table></figure>
+
+<div class="blockImg"><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/05.png"></div>
+
+<p>4、Flipping：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">flipped = cv2.flip(image, <span class="number">1</span>)  　　<span class="comment"># 水平翻转(左右方向上)</span></span><br><span class="line">cv2.imshow(<span class="string">"Flipped Horizontally"</span>, flipped)　　</span><br><span class="line">flipped = cv2.flip(image, <span class="number">0</span>)　　　<span class="comment"># 垂直翻转(上下方向上)</span></span><br><span class="line">cv2.imshow(<span class="string">"Flipped Vertically"</span>, flipped)</span><br><span class="line">flipped = cv2.flip(image, <span class="number">-1</span>)</span><br><span class="line">cv2.imshow(<span class="string">"Flipped Horizontally &amp; Vertically"</span>, flipped)</span><br></pre></td></tr></table></figure>
+
+<div class="blockImg"><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/06.png"></div>
+
+<p>5、Cropping：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cropped = image[<span class="number">30</span>:<span class="number">120</span> , <span class="number">240</span>:<span class="number">335</span>] 　　<span class="comment"># [y_start : y_end, x_start : x_end]</span></span><br><span class="line">cv2.imshow(<span class="string">"T-Rex Face"</span>, cropped)</span><br></pre></td></tr></table></figure>
+
+<div class="blockImg"><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/07.png"></div>
+
+<h4 id="Image-Arithmetic"><a href="#Image-Arithmetic" class="headerlink" title="Image Arithmetic"></a>Image Arithmetic</h4><p>　　我们都知道基本的算术运算，比如加法和减法。但是在处理图像时，我们需要记住我们的<span class="blockFont">颜色空间</span>和<span class="blockFont">数据类型</span>的限制。一般表示RGB图像的数据类型为：<span class="blockFont">uint8</span>，所能表示的范围为[0, 255]。</p>
+<p>　　Opencv和numpy在进行uint8类型数据加减的时候是有区别的：</p>
+<ol>
+<li>numpy：对于不在[0, 255]的结果将采取<strong>取余</strong>的方式来限制结果值的范围。</li>
+<li>Opencv：对于不在[0, 255]的结果值采取<strong>裁剪</strong>的方式，即小于0时就取值为0，大于255时就取值为255，这种方式在视觉表现上更可行。</li>
+</ol>
+<h4 id="Bitwise-operations"><a href="#Bitwise-operations" class="headerlink" title="Bitwise operations"></a>Bitwise operations</h4><p>　　位运算在图像处理中是非常基础，也是非常重要的一个内容，尤其是在<span class="blockFont">mask掩码操作</span>的过程中，位运算主要以下四种：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">bitwiseAnd = cv2.bitwise_and(rectangle,circle)  　<span class="comment"># 与</span></span><br><span class="line">bitwiseOr = cv2.bitwise_or(rectangle, circle)　   <span class="comment"># 或</span></span><br><span class="line">bitwiseXor = cv2.bitwise_xor(rectangle, circle)　 <span class="comment"># 异或</span></span><br><span class="line">bitwiseNot = cv2.bitwise_not(circle)　            <span class="comment"># 非</span></span><br></pre></td></tr></table></figure>
+
+<p>　　其处理的结果如下：</p>
+<div class="blockImg"><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/08.png"></div>
+
+
+
+<div class="blockImg"><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/09.png"></div>
+
+<h4 id="Masking"><a href="#Masking" class="headerlink" title="Masking"></a>Masking</h4><p>　　通过使用masking，我们从可以图像中<span class="blockFont">只提取出我们感兴趣的部分内容</span>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mask = np.zeros(image.shape[:<span class="number">2</span>], dtype = <span class="string">"uint8"</span>)</span><br><span class="line">(cX, cY) = (image.shape[<span class="number">1</span>] // <span class="number">2</span>, image.shape[<span class="number">0</span>] // <span class="number">2</span>)</span><br><span class="line">cv2.rectangle(mask, (cX - <span class="number">75</span>, cY - <span class="number">75</span>), (cX + <span class="number">75</span> , cY + <span class="number">75</span>), <span class="number">255</span>,<span class="number">-1</span>)</span><br><span class="line">cv2.imshow(<span class="string">"Mask"</span>, mask)</span><br><span class="line"></span><br><span class="line">masked = cv2.bitwise_and(image, image, mask = mask)</span><br><span class="line">cv2.imshow(<span class="string">"Mask Applied to Image"</span>, masked)</span><br></pre></td></tr></table></figure>
+
+<p>　　其结果如下：</p>
+<div class="blockImg"><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/10.png"></div>
+
+<h4 id="Color-Spaces"><a href="#Color-Spaces" class="headerlink" title="Color Spaces"></a>Color Spaces</h4><p>　　计算机视觉中主要会用到的色彩模型有三种：<span class="blockFont">RGB</span>、<span class="blockFont">HSV</span>以及<span class="blockFont">lab</span>。由于篇幅原因，这里不方便详细阐述，可以参考下一篇内容。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)</span><br><span class="line">cv2.imshow(<span class="string">"Gray"</span>, gray)</span><br><span class="line"></span><br><span class="line">hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)</span><br><span class="line">cv2.imshow(<span class="string">"HSV"</span>, hsv)</span><br><span class="line"></span><br><span class="line">lab = cv2.cvtColor(image, cv2.COLOR_BGR2LAB)</span><br><span class="line">cv2.imshow(<span class="string">"L\*a\*b\*"</span>, lab)</span><br></pre></td></tr></table></figure>
+
+<p>　　其结果如下：</p>
+<div class="blockImg"><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/11.png"></div>
+
+<h4 id="Splitting-and-Merging-Channels"><a href="#Splitting-and-Merging-Channels" class="headerlink" title="Splitting and Merging Channels"></a>Splitting and Merging Channels</h4><p>　　<span class="blockFont">在图像中，像素值越大显示得越亮，像素值越小显示得越暗。</span></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(B, G, R) = cv2.split(image)</span><br><span class="line">cv2.imshow(<span class="string">"Red"</span>, R)</span><br><span class="line">cv2.imshow(<span class="string">"Green"</span>, G)</span><br><span class="line">cv2.imshow(<span class="string">"Blue"</span>, B)</span><br><span class="line"></span><br><span class="line">merged = cv2.merge([B, G, R])</span><br><span class="line">cv2.imshow(<span class="string">"Merged"</span>, merged)</span><br></pre></td></tr></table></figure>
+
+<p>　　其结果如下：</p>
+<div class="blockImg" style="height:120px; width:600px" ><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/12.png"></div>
+
+
+
+<h3 id="Chapter-7-–-Histograms"><a href="#Chapter-7-–-Histograms" class="headerlink" title="Chapter 7 – Histograms"></a>Chapter 7 – Histograms</h3><p>1、先通过cv2.calcHist函数来<strong>构建直方图数据</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv2.calcHist(images,channels,mask,histSize,ranges)</span><br></pre></td></tr></table></figure>
+
+<p>2、然后通过plt.plot()函数来<strong>显示直方图</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plt.plot(hist)</span><br></pre></td></tr></table></figure>
+
+<h4 id="直方图类型"><a href="#直方图类型" class="headerlink" title="直方图类型"></a>直方图类型</h4><h5 id="一维直方图（只考虑图像的一个特征）"><a href="#一维直方图（只考虑图像的一个特征）" class="headerlink" title="一维直方图（只考虑图像的一个特征）"></a>一维直方图（只考虑图像的一个特征）</h5><p>1、统计灰度图像中每个颜色强度（0~255）的<strong>像素数量</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)</span><br><span class="line">cv2.imshow(<span class="string">"Original"</span>, image)</span><br><span class="line">hist = cv2.calcHist([image], [<span class="number">0</span>], <span class="literal">None</span>, [<span class="number">256</span>], [<span class="number">0</span>, <span class="number">256</span>])</span><br><span class="line"></span><br><span class="line">plt.figure()</span><br><span class="line">plt.title(<span class="string">"Grayscale Histogram"</span>)</span><br><span class="line">plt.xlabel(<span class="string">"Bins"</span>)</span><br><span class="line">plt.ylabel(<span class="string">"# of Pixels"</span>)</span><br><span class="line"></span><br><span class="line">plt.plot(hist)</span><br><span class="line">plt.xlim([<span class="number">0</span>, <span class="number">256</span>])</span><br><span class="line">plt.show()</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<div class="blockImg"><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/13.png"></div>
+
+<p>2、统计彩色图像中每个颜色强度（0~255）的<strong>像素数量</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">chans = cv2.split(image)</span><br><span class="line">colors = (<span class="string">"b"</span>, <span class="string">"g"</span>, <span class="string">"r"</span>)</span><br><span class="line"></span><br><span class="line">plt.figure()</span><br><span class="line">plt.title(<span class="string">"’Flattened’ Color Histogram"</span>)</span><br><span class="line">plt.xlabel(<span class="string">"Bins"</span>)</span><br><span class="line">plt.ylabel(<span class="string">"# of Pixels"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (chan, color) <span class="keyword">in</span> zip(chans, colors):</span><br><span class="line">　　hist = cv2.calcHist([chan], [<span class="number">0</span>], <span class="literal">None</span>, [<span class="number">256</span>], [<span class="number">0</span>, <span class="number">256</span>])</span><br><span class="line">　　plt.plot(hist, color = color)</span><br><span class="line">　　plt.xlim([<span class="number">0</span>, <span class="number">256</span>])</span><br></pre></td></tr></table></figure>
+
+<div class="blockImg"><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/14.png" width=50% height=50%></div>
+
+<h5 id="二维直方图（考虑图像的两个特征）"><a href="#二维直方图（考虑图像的两个特征）" class="headerlink" title="二维直方图（考虑图像的两个特征）"></a>二维直方图（考虑图像的两个特征）</h5><p>　　分别统计图像中：R和G、R和B、G和B<strong>两个颜色强度的像素数量</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fig = plt.figure()</span><br><span class="line">ax = fig.add_subplot(<span class="number">131</span>)</span><br><span class="line">hist = cv2.calcHist([chans[<span class="number">1</span>], chans[<span class="number">0</span>]], [<span class="number">0</span>, <span class="number">1</span>], <span class="literal">None</span>,[<span class="number">32</span>, <span class="number">32</span>], [<span class="number">0</span>, <span class="number">256</span>, <span class="number">0</span>, <span class="number">256</span>])</span><br><span class="line">p = ax.imshow(hist, interpolation = <span class="string">"nearest"</span>)</span><br><span class="line">ax.set_title(<span class="string">"2D Color Histogram for G and B"</span>)</span><br><span class="line">plt.colorbar(p)</span><br><span class="line">print(<span class="string">"2D histogram shape: &#123;&#125;, with &#123;&#125; values"</span>.format(hist.shape, hist.flatten().shape[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<div class="blockImg"><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/15.png" width=50% height=50%></div>
+
+<p>　　图中蓝色到红的渐变过程表示：像素的数量由少到多</p>
+<h4 id="直方图均衡化"><a href="#直方图均衡化" class="headerlink" title="直方图均衡化"></a>直方图均衡化</h4><p>　　直方图均衡通过“拉伸”像素的分布来改善图像的对比度。当图像包含了既黑暗又有光线的背景和背景时，这种方法是有用的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)</span><br><span class="line">eq = cv2.equalizeHist(image)</span><br><span class="line"></span><br><span class="line">cv2.imshow(<span class="string">"Histogram Equalization"</span>, np.hstack([image, eq]))</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<div class="blockImg"><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/16.png" width=50% height=50%></div>
+
+<h3 id="Chapter-8-–-Smoothing-and-Blurring"><a href="#Chapter-8-–-Smoothing-and-Blurring" class="headerlink" title="Chapter 8 – Smoothing and Blurring"></a>Chapter 8 – Smoothing and Blurring</h3><p>　　许多图像处理和计算机视觉功能，如<strong>阈值</strong>和<strong>边缘检测</strong>，如果图像首先平滑或模糊，效果会更好。在这个过程中，使用的<strong>滑动窗口k的值越大越模糊</strong>。</p>
+<h4 id="Averaging"><a href="#Averaging" class="headerlink" title="Averaging"></a>Averaging</h4><p>　　在图像顶部定义一个k*k滑动窗口，其中k始终是奇数。 此窗口将从左到右，从上到下滑动。 然后将<strong>该矩阵中心的像素</strong>（我们必须使用奇数，否则不会有真正的“中心”）设置为围绕它的所有<strong>其他像素的平均值</strong>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">blurred = np.hstack([</span><br><span class="line">　　cv2.blur(image, (<span class="number">3</span>, <span class="number">3</span>)),</span><br><span class="line">　　cv2.blur(image, (<span class="number">5</span>, <span class="number">5</span>)),</span><br><span class="line">　　cv2.blur(image, (<span class="number">7</span>, <span class="number">7</span>))])</span><br><span class="line"></span><br><span class="line">cv2.imshow(<span class="string">"Averaged"</span>, blurred)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<div class="blockImg" style="width:600px;height:220px;" ><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/17.png"></div>
+
+<h4 id="Gaussian"><a href="#Gaussian" class="headerlink" title="Gaussian"></a>Gaussian</h4><p>　　高斯模糊类似于平均模糊，但是我们现在使用<strong>加权平均值</strong>而不是使用简单均值，其中更接近中心像素的邻域像素对平均值贡献更多“权重”。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">blurred = np.hstack([</span><br><span class="line">　　cv2.GaussianBlur(image, (<span class="number">3</span>, <span class="number">3</span>), <span class="number">0</span>),</span><br><span class="line">　　cv2.GaussianBlur(image, (<span class="number">5</span>, <span class="number">5</span>), <span class="number">0</span>),</span><br><span class="line">　　cv2.GaussianBlur(image, (<span class="number">7</span>, <span class="number">7</span>), <span class="number">0</span>)])</span><br><span class="line">cv2.imshow(<span class="string">"Gaussian"</span>, blurred)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<div class="blockImg" style="width:600px;height:220px;" ><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/18.png"></div>
+
+<p>　　与平均方法相比，高斯模糊的图像模糊度更低，模糊的更自然一些。</p>
+<h4 id="Median"><a href="#Median" class="headerlink" title="Median"></a>Median</h4><p>　　与平均方法不同，中值模糊方法不是用邻域的平均值替换中心像素，而是用邻域的中值替换中心像素。传统上，中值模糊方法在去除<strong>椒盐噪声</strong>时最有效，这是因为每个中心像素总是被图像中存在的像素强度替换。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">blurred = np.hstack([</span><br><span class="line">　　cv2.medianBlur(image, <span class="number">3</span>),</span><br><span class="line">　　cv2.medianBlur(image, <span class="number">5</span>),</span><br><span class="line">　　cv2.medianBlur(image, <span class="number">7</span>)])</span><br><span class="line"></span><br><span class="line">cv2.imshow(<span class="string">"Median"</span>, blurred)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<div class="blockImg" style="width:600px;height:220px;" ><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/19.png"></div>
+
+<p>　　请注意，中值模糊方法不再像平均和高斯模糊那样创建“运动模糊”效果，相反，它正在消除细节和噪音。</p>
+<h4 id="Bilateral"><a href="#Bilateral" class="headerlink" title="Bilateral"></a>Bilateral</h4><p>　　到目前为止，我们的模糊方法的目的是减少图像中的噪声和细节; 但是，我们往往会<strong>丢失图像中的边缘</strong>。为了在保持边缘的同时降低噪音，我们可以使用<strong>双边模糊</strong>。 双边模糊通过引入<strong>两个高斯分布</strong>来实现这一点。<strong>第一高斯函数</strong>仅考虑空间邻居，即在图像的（x，y）坐标空间中出现在一起的像素。 然后，<strong>第二高斯模型</strong>对邻域的像素强度进行建模，确保在模糊的实际计算中<strong>仅包括具有相似强度的像素</strong>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">blurred = np.hstack([</span><br><span class="line">　　cv2.bilateralFilter(image, <span class="number">5</span>, <span class="number">21</span>, <span class="number">21</span>),</span><br><span class="line">　　cv2.bilateralFilter(image, <span class="number">7</span>, <span class="number">31</span>, <span class="number">31</span>),</span><br><span class="line">　　cv2.bilateralFilter(image, <span class="number">9</span>, <span class="number">41</span>, <span class="number">41</span>)])</span><br><span class="line"></span><br><span class="line">cv2.imshow(<span class="string">"Bilateral"</span>, blurred)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<div class="blockImg" style="width:600px;height:220px;" ><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/20.png" ></div>
+
+<p>　　总的来说，这种方法能够保留图像的边缘，同时还能降低噪点。 其最大的缺点就是它比平均，高斯和中值模糊慢得多。</p>
+<h3 id="Chapter-9-–-Thresholding"><a href="#Chapter-9-–-Thresholding" class="headerlink" title="Chapter 9 – Thresholding"></a>Chapter 9 – Thresholding</h3><p>　　通常，我们使用<strong>阈值</strong>处理来关注图像中特别感兴趣的对象或区域，阈值处理其实就是对图像进行一个二值化的操作。</p>
+<h4 id="Simple-Thresholding"><a href="#Simple-Thresholding" class="headerlink" title="Simple Thresholding"></a>Simple Thresholding</h4><p>　　应用简单的阈值方法需要人为干预，即图像阈值需要我们自己手动设置。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)</span><br><span class="line">blurred = cv2.GaussianBlur(image, (<span class="number">5</span>, <span class="number">5</span>), <span class="number">0</span>)</span><br><span class="line">cv2.imshow(<span class="string">"Image"</span>, image)</span><br><span class="line"></span><br><span class="line">(T, thresh) = cv2.threshold(blurred, <span class="number">155</span>, <span class="number">255</span>, cv2.THRESH_BINARY)</span><br><span class="line">cv2.imshow(<span class="string">"Threshold Binary"</span>, thresh)</span><br><span class="line"></span><br><span class="line">(T, threshInv) = cv2.threshold(blurred, <span class="number">155</span>, <span class="number">255</span>, cv2.THRESH_BINARY_INV)</span><br><span class="line">cv2.imshow(<span class="string">"Threshold Binary Inverse"</span>, threshInv)</span><br><span class="line">cv2.imshow(<span class="string">"Coins"</span>, cv2.bitwise_and(image, image, mask = threshInv))</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<div class="blockImg" style="width:500px;height:520px;">![](https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/21.png)</div>
+
+<p>　　在进行二值化之前需要先进行一次高斯模糊：应用高斯模糊有助于去除图像中我们不关心的一些高频边缘。在代码中，155是我们手动设置的阈值T，当像素值小于155时，其值就设置为0，否则就设置为255。</p>
+<h4 id="Adaptive-Thresholding"><a href="#Adaptive-Thresholding" class="headerlink" title="Adaptive Thresholding"></a>Adaptive Thresholding</h4><p>　　简单阈值方法的一大缺点就是需要人工设置阈值T，为了克服这个问题，我们可以使用自适应阈值处理，它考虑像素的小邻居，然后为每个邻居找到最佳阈值T.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)</span><br><span class="line">blurred = cv2.GaussianBlur(image, (<span class="number">5</span>, <span class="number">5</span>), <span class="number">0</span>)</span><br><span class="line">cv2.imshow(<span class="string">"Image"</span>, image)</span><br><span class="line"></span><br><span class="line">thresh = cv2.adaptiveThreshold(blurred,  <span class="number">255</span>, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY_INV, <span class="number">11</span>, <span class="number">4</span>)</span><br><span class="line">cv2.imshow(<span class="string">"Mean Thresh"</span>, thresh)</span><br><span class="line"></span><br><span class="line">thresh = cv2.adaptiveThreshold(blurred, <span class="number">255</span>, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY_INV, <span class="number">15</span>, <span class="number">3</span>)</span><br><span class="line">cv2.imshow(<span class="string">"Gaussian Thresh"</span>, thresh)</span><br><span class="line"></span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<div class="blockImg" style="width:600px;height:220px;" ><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/22.png" ></div>
+
+
+
+<p>　　我们使用cv2.THRESH_BINARY_INV来指示邻域中任何大于T的像素强度应设置为255，否则应设置为0。</p>
+<h4 id="Otsu-and-Riddler-Calvard"><a href="#Otsu-and-Riddler-Calvard" class="headerlink" title="Otsu and Riddler-Calvard"></a>Otsu and Riddler-Calvard</h4><p>　　我们可以自动计算T的阈值的另一种方法是使用Otsu的方法。Otsu的方法假设图像的灰度直方图中有两个峰值。 然后它试图找到一个最佳值来分隔这两个峰值——T值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> mahotas</span><br><span class="line"></span><br><span class="line">image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)</span><br><span class="line">blurred = cv2.GaussianBlur(image, (<span class="number">5</span>, <span class="number">5</span>), <span class="number">0</span>)</span><br><span class="line">cv2.imshow(<span class="string">"Image"</span>, image)</span><br><span class="line"></span><br><span class="line">T = mahotas.thresholding.otsu(blurred)</span><br><span class="line">print(<span class="string">"Otsu’s threshold: &#123;&#125;"</span>.format(T))</span><br><span class="line">thresh = image.copy()</span><br><span class="line">thresh[thresh &gt; T] = <span class="number">255</span></span><br><span class="line">thresh[thresh &lt; <span class="number">255</span>] = <span class="number">0</span></span><br><span class="line">thresh = cv2.bitwise_not(thresh)</span><br><span class="line">cv2.imshow(<span class="string">"Otsu"</span>, thresh)</span><br><span class="line"></span><br><span class="line">T = mahotas.thresholding.rc(blurred)</span><br><span class="line">print(<span class="string">"Riddler-Calvard: &#123;&#125;"</span>.format(T))</span><br><span class="line">thresh = image.copy()</span><br><span class="line">thresh[thresh &gt; T] = <span class="number">255</span></span><br><span class="line">thresh[thresh &lt; <span class="number">255</span>] = <span class="number">0</span></span><br><span class="line">thresh = cv2.bitwise_not(thresh)</span><br><span class="line">cv2.imshow(<span class="string">"Riddler-Calvard"</span>, thresh)</span><br><span class="line"></span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<div class="blockImg" style="width:600px;height:220px;" ><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/23.png" ></div>
+
+<h3 id="Chapter-10-–-Gradients-and-Edge-Detection"><a href="#Chapter-10-–-Gradients-and-Edge-Detection" class="headerlink" title="Chapter 10 – Gradients and Edge Detection"></a>Chapter 10 – Gradients and Edge Detection</h3><p>　　我们要做的第一件事是找到灰度图像的“渐变”，也就是梯度的变化，允许我们在x和y方向上找到类似边缘的区域。 然后，我们将应用Canny边缘检测，降噪（模糊）的多阶段过程，找到图像的梯度（在水平和垂直方向上利用Sobel核心），非最大抑制和滞后阈值。</p>
+<h4 id="Laplacian-and-Sobel"><a href="#Laplacian-and-Sobel" class="headerlink" title="Laplacian and Sobel"></a>Laplacian and Sobel</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)</span><br><span class="line">cv2.imshow(<span class="string">"Original"</span>, image)</span><br><span class="line">lap = cv2.Laplacian(image, cv2.CV_64F)</span><br><span class="line">lap = np.uint8(np.absolute(lap)) 　　<span class="comment">#这一步非常重要</span></span><br><span class="line">cv2.imshow(<span class="string">"Laplacian"</span>, lap)</span><br><span class="line"></span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<div class="blockImg">![](https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/24.png)</div>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">sobelX = cv2.Sobel(image, cv2.CV_64F, <span class="number">1</span>, <span class="number">0</span>)</span><br><span class="line">sobelY = cv2.Sobel(image, cv2.CV_64F, <span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 由于uint8不支持负数，所以下面两行代码如果没有的话，边缘将会检测不出来。</span></span><br><span class="line">sobelX = np.uint8(np.absolute(sobelX))</span><br><span class="line">sobelY = np.uint8(np.absolute(sobelY))</span><br><span class="line"></span><br><span class="line">sobelCombined = cv2.bitwise_or(sobelX, sobelY)</span><br><span class="line">cv2.imshow(<span class="string">"Sobel X"</span>, sobelX)</span><br><span class="line">cv2.imshow(<span class="string">"Sobel Y"</span>, sobelY)</span><br><span class="line">cv2.imshow(<span class="string">"Sobel Combined"</span>, sobelCombined)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<div class="blockImg" style="width:500px;height:520px;"><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/25.png" ></div>
+
+<p>　　<strong>注意：</strong> 从黑色到白色的转变被认为是正斜率，而从白色到黑色的转变是负斜率。</p>
+<h4 id="Canny-Edge-Detector"><a href="#Canny-Edge-Detector" class="headerlink" title="Canny Edge Detector"></a>Canny Edge Detector</h4><p>　　Canny边缘检测器是一个多步骤的过程。 它涉及模糊图像以去除噪声，计算x和y方向上的Sobel梯度图像，抑制边缘，以及最后确定像素是否“边缘样”的滞后阈值阶段。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)</span><br><span class="line">image = cv2.GaussianBlur(image, (<span class="number">5</span>, <span class="number">5</span>), <span class="number">0</span>)</span><br><span class="line">cv2.imshow(<span class="string">"Blurred"</span>, image)</span><br><span class="line"></span><br><span class="line">canny = cv2.Canny(image, <span class="number">30</span>, <span class="number">150</span>)</span><br><span class="line">cv2.imshow(<span class="string">"Canny"</span>, canny)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<div class="blockImg"><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/26.png" ></div>
+
+<p>　　在这种情况下，任何低于30的梯度值都被认为是非边缘，而高于150的任何值都被认为是边缘。</p>
+<h3 id="Chapter-11-–-Contours"><a href="#Chapter-11-–-Contours" class="headerlink" title="Chapter 11 – Contours"></a>Chapter 11 – Contours</h3><p>　　OpenCV提供了在图像中查找“曲线”的方法，称为轮廓。 轮廓是点的曲线，曲线中没有间隙。 轮廓对形状近似和分析等方面非常有用。 为了在图像中找到轮廓，需要首先使用边缘检测方法或阈值处理来获得图像的二值化。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)</span><br><span class="line">blurred = cv2.GaussianBlur(gray, (<span class="number">11</span>, <span class="number">11</span>), <span class="number">0</span>)</span><br><span class="line">cv2.imshow(<span class="string">"Image"</span>, image)</span><br><span class="line"></span><br><span class="line">edged = cv2.Canny(blurred, <span class="number">30</span>, <span class="number">150</span>)</span><br><span class="line">cv2.imshow(<span class="string">"Edges"</span>, edged)</span><br><span class="line"></span><br><span class="line">(_, cnts, _) = cv2.findContours(edged.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)</span><br><span class="line">print(<span class="string">"I count &#123;&#125; coins in this image"</span>.format(len(cnts)))</span><br><span class="line">coins = image.copy()</span><br><span class="line">cv2.drawContours(coins, cnts, <span class="number">-1</span>, (<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>), <span class="number">2</span>)</span><br><span class="line">cv2.imshow(<span class="string">"Coins"</span>, coins)</span><br><span class="line"></span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<div class="blockImg" style="width:600px;height:240px;" ><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/Practical%20Python%20and%20OpenCV/27.png" ></div>
+
+<p>　　cv2.findContours函数中放入第二个参数是我们想要的轮廓类型。 我们使用cv2.RETR_EXTERNAL来仅检索最外面的轮廓（即，跟随硬币轮廓的轮廓）。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">图像处理</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Opencv</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/工具使用//" class="article-tag-list-link color5">工具使用</a>
+        			<a href="/categories/计算机视觉//" class="article-tag-list-link color1">计算机视觉</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/计算机视觉/读书笔记//" class="article-tag-list-link color5">读书笔记</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/05/13/Practical-Python-and-OpenCV/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/05/11/C++%E8%AF%AD%E5%8F%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C++语句</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  <div id="gitalk-container" style="padding: 0px 30px 0px 46px;"></div> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+var gitalk = new Gitalk({
+        clientID:  'cf744186301da6f1ef2d', 
+        clientSecret: '5a2a0bab05819bc3be53a2de66383ab641859b40',
+        id: "Wed May 13 2020 20:47:49 GMT+0800",
+        repo: 'blog_comment', 
+        owner: 'xipuhu', 
+        admin: 'xipuhu', 
+        distractionFreeMode: 'true',
+     })
+gitalk.render('gitalk-container')
+</script>
   
 
-    
+  
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -261,9 +647,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: false,
