@@ -32,8 +32,4 @@
 	height: 100%;
 }
 
-/*图片居中*/
-img[url$="center"]{
-display:block;
-margin:0 auto;
-}
+
