@@ -178,6 +178,194 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-04超参数调试和Batch-Norm" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/24/04%E8%B6%85%E5%8F%82%E6%95%B0%E8%B0%83%E8%AF%95%E5%92%8CBatch-Norm/">04超参数调试和Batch Norm</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/24/04%E8%B6%85%E5%8F%82%E6%95%B0%E8%B0%83%E8%AF%95%E5%92%8CBatch-Norm/" class="archive-article-date">
+  	<time datetime="2020-05-24T02:11:57.930Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-24</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="超参数调试"><a href="#超参数调试" class="headerlink" title="超参数调试"></a>超参数调试</h3><h4 id="随机选取超参数"><a href="#随机选取超参数" class="headerlink" title="随机选取超参数"></a>随机选取超参数</h4><img src="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/%E8%B6%85%E5%8F%82%E6%95%B0%E8%B0%83%E8%AF%95%E5%92%8CBatch%20Norm/01.png" width=60% height=60%>
+        
+          <a class="article-more-a" href="/2020/05/24/04%E8%B6%85%E5%8F%82%E6%95%B0%E8%B0%83%E8%AF%95%E5%92%8CBatch-Norm/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">深度学习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/计算机视觉//" class="article-tag-list-link color1">计算机视觉</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/计算机视觉/吴恩达深度学习//" class="article-tag-list-link color3">吴恩达深度学习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/24/04%E8%B6%85%E5%8F%82%E6%95%B0%E8%B0%83%E8%AF%95%E5%92%8CBatch-Norm/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-03卷积神经网络反向传播：从直觉到推导" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/24/03%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%EF%BC%9A%E4%BB%8E%E7%9B%B4%E8%A7%89%E5%88%B0%E6%8E%A8%E5%AF%BC/">03卷积神经网络反向传播：从直觉到推导</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/24/03%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%EF%BC%9A%E4%BB%8E%E7%9B%B4%E8%A7%89%E5%88%B0%E6%8E%A8%E5%AF%BC/" class="archive-article-date">
+  	<time datetime="2020-05-24T01:52:27.052Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-24</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="卷积层反向传播理解"><a href="#卷积层反向传播理解" class="headerlink" title="卷积层反向传播理解"></a>卷积层反向传播理解</h3><h4 id="从全连接层看卷积层"><a href="#从全连接层看卷积层" class="headerlink" title="从全连接层看卷积层"></a>从全连接层看卷积层</h4><h5 id="全连接层的反向传播过程"><a href="#全连接层的反向传播过程" class="headerlink" title="全连接层的反向传播过程"></a>全连接层的反向传播过程</h5><p>　　在CNN中，由于增加了卷积运算，相较于全连接层神经网络（也就是我们之前学过的DNN），其理解起来更加的有难度了。在CNN的前向传播过程中，理解了卷积运算后，基本上对整个前向传播过程的理解并不会有太大困难，但是对于CNN的反向传播过程的理解，还需要下一番功夫，主要的原因还是在于引入了卷积运算，接下来就开始对CNN的反向传播做进一步的加深理解。</p>
+        
+          <a class="article-more-a" href="/2020/05/24/03%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%EF%BC%9A%E4%BB%8E%E7%9B%B4%E8%A7%89%E5%88%B0%E6%8E%A8%E5%AF%BC/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">深度学习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/计算机视觉//" class="article-tag-list-link color1">计算机视觉</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/计算机视觉/吴恩达深度学习//" class="article-tag-list-link color3">吴恩达深度学习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/24/03%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%EF%BC%9A%E4%BB%8E%E7%9B%B4%E8%A7%89%E5%88%B0%E6%8E%A8%E5%AF%BC/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-02神经网络和深度学习——深层神经网络" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -938,198 +1126,6 @@
 
 
   
-    <article id="post-Practical-Python-and-OpenCV" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/13/Practical-Python-and-OpenCV/">Practical Python and OpenCV</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/13/Practical-Python-and-OpenCV/" class="archive-article-date">
-  	<time datetime="2020-05-13T12:47:49.402Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-13</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Chapter-3-–-loading-displaying-and-saving"><a href="#Chapter-3-–-loading-displaying-and-saving" class="headerlink" title="Chapter 3 – loading,displaying, and saving"></a>Chapter 3 – loading,displaying, and saving</h3><p>1、参数解析库argparse的使用:</p>
-        
-          <a class="article-more-a" href="/2020/05/13/Practical-Python-and-OpenCV/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">图像处理</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Opencv</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/计算机视觉//" class="article-tag-list-link color1">计算机视觉</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/13/Practical-Python-and-OpenCV/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C++语句" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/11/C++%E8%AF%AD%E5%8F%A5/">C++语句</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/11/C++%E8%AF%AD%E5%8F%A5/" class="archive-article-date">
-  	<time datetime="2020-05-11T14:25:05.477Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-11</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="空语句"><a href="#空语句" class="headerlink" title="空语句"></a>空语句</h3><p>　　空语句是最简单的语句，只含有一个单独的分号。如果在程序的某个地方，语法上需要一条语句但是逻辑上不需要，此时应该使用空语句。一种常见的情况是，当循环的全部工作在条件部分就可以完成时，我们通常会用到空语句，比如：</p>
-        
-          <a class="article-more-a" href="/2020/05/11/C++%E8%AF%AD%E5%8F%A5/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">语句</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/读书笔记//" class="article-tag-list-link color5">读书笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/读书笔记/C-Primer//" class="article-tag-list-link color1">C++ Primer</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/11/C++%E8%AF%AD%E5%8F%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
@@ -1256,11 +1252,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">类</a>
+                <a href="javascript:void(0)" class="js-tag color1">CSAPP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">程序结构和执行</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">C++函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1300,11 +1304,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">深度学习框架</a>
+                <a href="javascript:void(0)" class="js-tag color5">色彩空间</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">色彩空间</a>
+                <a href="javascript:void(0)" class="js-tag color2">深度学习框架</a>
               </li>
              
               <li class="article-tag-list-item">
