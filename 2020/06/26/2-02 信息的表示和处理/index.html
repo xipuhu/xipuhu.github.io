@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>第二章：信息的表示和处理 | xipuhu&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言　　计算机将信息编码为位（比特），通常组织成字节序列。有不同的编码方式用来表示整数、实数和字符串。不同的计算机模型在编码数字和多字节数据中的字节顺序时使用不同的约定。　　大多数机器对整数使用补码编码，而对浮点数使用IEEE标准754编码。在位级上理解这些编码，并且理解算术运算的数学特性，对于想使编写的程序能在全部数值范围上正确运算的程序员来说，是很重要的。C语言隐式的强制类型转换会出现许多程序">
+  <meta name="description" content="前言　　计算机将信息编码为位（bit），通常组织成字节序列。有不同的编码方式用来表示整数、实数和字符串。不同的计算机模型在编码数字和多字节数据中的字节顺序时使用不同的约定。　　大多数机器对整数使用补码编码，而对浮点数使用IEEE标准754编码。在位级上理解这些编码，并且理解算术运算的数学特性，对于想使编写的程序能在全部数值范围上正确运算的程序员来说，是很重要的。C语言隐式的强制类型转换会出现许多程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第二章：信息的表示和处理">
 <meta property="og:url" content="http://yoursite.com/2020/06/26/2-02%20%E4%BF%A1%E6%81%AF%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%A4%84%E7%90%86/index.html">
 <meta property="og:site_name" content="xipuhu&#39;s blog">
-<meta property="og:description" content="前言　　计算机将信息编码为位（比特），通常组织成字节序列。有不同的编码方式用来表示整数、实数和字符串。不同的计算机模型在编码数字和多字节数据中的字节顺序时使用不同的约定。　　大多数机器对整数使用补码编码，而对浮点数使用IEEE标准754编码。在位级上理解这些编码，并且理解算术运算的数学特性，对于想使编写的程序能在全部数值范围上正确运算的程序员来说，是很重要的。C语言隐式的强制类型转换会出现许多程序">
+<meta property="og:description" content="前言　　计算机将信息编码为位（bit），通常组织成字节序列。有不同的编码方式用来表示整数、实数和字符串。不同的计算机模型在编码数字和多字节数据中的字节顺序时使用不同的约定。　　大多数机器对整数使用补码编码，而对浮点数使用IEEE标准754编码。在位级上理解这些编码，并且理解算术运算的数学特性，对于想使编写的程序能在全部数值范围上正确运算的程序员来说，是很重要的。C语言隐式的强制类型转换会出现许多程">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/02%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/02/01.png">
 <meta property="og:image" content="https://hexo-blog-1258021165.cos.ap-guangzhou.myqcloud.com/02%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/02/02.png">
 <meta property="article:published_time" content="2020-06-26T13:23:37.358Z">
-<meta property="article:modified_time" content="2020-06-26T14:25:33.994Z">
+<meta property="article:modified_time" content="2022-09-22T13:37:35.709Z">
 <meta property="article:author" content="xipuhu">
 <meta property="article:tag" content="CSAPP">
 <meta property="article:tag" content="程序结构和执行">
@@ -230,7 +230,7 @@
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>　　计算机将信息编码为位（比特），通常组织成字节序列。有不同的编码方式用来表示整数、实数和字符串。不同的计算机模型在编码数字和多字节数据中的字节顺序时使用不同的约定。<br>　　<code>大多数机器对整数使用补码编码，而对浮点数使用IEEE标准754编码</code>。在位级上理解这些编码，并且理解算术运算的数学特性，对于想使编写的程序能在全部数值范围上正确运算的程序员来说，是很重要的。<code>C语言隐式的强制类型转换会出现许多程序员无法预计的结果，常常导致程序错误</code>。<br>　　由于编码的长度有限，与传统整数和实数运算相比，计算机运算具有非常不同的属性。当超出表示范围时，有限长度能够引起数值溢出。当浮点数非常接近于0.0，从而转换成零时，也会下溢。无符号数和补码的运算都满足整数运算的许多其他属性，包括结合律、交换律和分配律。这就允许编译器做很多的优化。例如，<code>用(x&lt;&lt;3)-x取代表达式7*x时</code>，我们就利用了结合律、交换律和分配律的属性，还利用了移位和乘以2的幂之间的关系。<code>对于浮点运算，我们必须要非常小心地使用，因为浮点运算只有有限的范围和精度，而且并不遵循普通的算术属性，比如结合性。</code></p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>　　计算机将信息编码为位（bit），通常组织成字节序列。有不同的编码方式用来表示整数、实数和字符串。不同的计算机模型在编码数字和多字节数据中的字节顺序时使用不同的约定。<br>　　<code>大多数机器对整数使用补码编码，而对浮点数使用IEEE标准754编码</code>。在位级上理解这些编码，并且理解算术运算的数学特性，对于想使编写的程序能在全部数值范围上正确运算的程序员来说，是很重要的。<code>C语言隐式的强制类型转换会出现许多程序员无法预计的结果，常常导致程序错误</code>。<br>　　由于编码的长度有限，与传统整数和实数运算相比，计算机运算具有非常不同的属性。当超出表示范围时，有限长度能够引起数值溢出。当浮点数非常接近于0.0，从而转换成零时，也会下溢。无符号数和补码的运算都满足整数运算的许多其他属性，包括结合律、交换律和分配律。这就允许编译器做很多的优化。例如，<code>用(x&lt;&lt;3)-x取代表达式7*x时</code>，我们就利用了结合律、交换律和分配律的属性，还利用了移位和乘以2的幂之间的关系。<code>对于浮点运算，我们必须要非常小心地使用，因为浮点运算只有有限的范围和精度，而且并不遵循普通的算术属性，比如结合性。</code></p>
 <a id="more"></a>
 
 <p>　　在本章节中，我们研究三种最重要的数字表示：</p>
