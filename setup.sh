@@ -8,5 +8,3 @@ npm install hexo-deployer-git --save # 安装部署工具
 hexo g
 # 本地测试
 hexo server
-
-echo "success to setup blog!"
