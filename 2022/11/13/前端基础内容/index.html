@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="XipuHu">
+
+
+
+
+
+<title>前端基础内容 | xipuhu</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Xipuhu&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Xipuhu&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">前端基础内容</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">XipuHu</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">November 13, 2022&nbsp;&nbsp;17:39:09</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="typescript"><a href="#typescript" class="headerlink" title="typescript"></a>typescript</h1><h3 id="ts命令行使用"><a href="#ts命令行使用" class="headerlink" title="ts命令行使用"></a>ts命令行使用</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tsc xxx.ts // 将ts代码转换成js代码</span><br><span class="line">tsc --watch xxx.ts // 自动把最新的ts代码转换为js代码</span><br></pre></td></tr></table></figure>
+<h2 id="语法点"><a href="#语法点" class="headerlink" title="语法点"></a>语法点</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>　　typescript中的数据类型分为两大类：1、原始数据（基本数据类型）；2、对象类型（复杂数据类型）。<br>　　常用的基本数据类型有5个：number&#x2F;string&#x2F;boolean&#x2F;undefined&#x2F;null.</p>
+<h4 id="string"><a href="#string" class="headerlink" title="string"></a>string</h4><p>　　表示一个string时可以使用单引号也可以使用双引号。</p>
+<h4 id="undefined和null"><a href="#undefined和null" class="headerlink" title="undefined和null"></a>undefined和null</h4><p>　　共同点：都只有一个值，值为类型本身。<br>　　undefined类型的值为：undfined<br>　　null类型的值为：null。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">u</span>: <span class="literal">undefined</span> = <span class="literal">undefined</span>;</span><br><span class="line"><span class="keyword">let</span> <span class="attr">n</span>: <span class="literal">null</span> = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+<p>　　undefined：表示<strong>声明但未赋值的变量值</strong>（找不到值）</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">u</span>: <span class="literal">undefined</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(u);   <span class="comment">// 变量u的值为undefined</span></span><br></pre></td></tr></table></figure>
+<p>　　null：表示<strong>声明了变量并已赋值，值为null</strong>（能找到，值就是null）。</p>
+<h3 id="list列表遍历"><a href="#list列表遍历" class="headerlink" title="list列表遍历"></a>list列表遍历</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> list = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.a);</span></span><br><span class="line"><span class="string">list.forEach(function(item, index))&#123;</span></span><br><span class="line"><span class="string">	let p = item as HTMLParagraphElement;</span></span><br><span class="line"><span class="string">	p.innerText += index;</span></span><br><span class="line"><span class="string">&#125;)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="VS插件"><a href="#VS插件" class="headerlink" title="VS插件"></a>VS插件</h2><p><code>live server</code>：自动刷新页面</p>
+<h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><p>　　dom是专门用来操作网页内容的一些<code>JS对象</code>，是ts用来控制网页内容的中间件：document.xxxx</p>
+<h2 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h2><h3 id="选择DOM元素"><a href="#选择DOM元素" class="headerlink" title="选择DOM元素"></a>选择DOM元素</h3><h4 id="document-querySelector-selector"><a href="#document-querySelector-selector" class="headerlink" title="document.querySelector(selector)"></a>document.querySelector(selector)</h4><p>【document对象】：文档对象（整个页面），是操作页面内容的入口对象<br>【selector对象】：是一个CSS选择器（标签、类、id选择器等）<br>【作用】：查询（获取）与选择器参数匹配的DOM元素，但是，只能获取到<code>第一个</code>，推荐使用id选择器（唯一）。<br>【例如】：let title &#x3D; document.querySelector(‘#title’)<br>【问题】：调用querySelector()通过id选择器获取DOM元素时，拿到的元素类型<code>都是Element</code>。因为无法根据id来确定元素的类型，所以，该方法就返回了一个宽泛的类型：元素（Element）类型，不管h1还是img都是元素。<br>【导致新问题】：无法访问img元素的src属性了，因为Element类型只包含所有元素共有的属性和方法（比如：id属性）。<br>【解决方式】：使用类型断言，来手动指定更加具体的类型（比如，此处应该比Element类型更加具体）。<br>【语法】：值 as 更加具体的类型。<br>【比如】：let img &#x3D; document.querySelector(‘#image’) as HTMLImageElement<br>【解释】：我们确定id&#x3D;”image”的元素是图片元素，所以，我们将类型指定为HTMLElement。<br>【技巧】：通过console.dir()打印DOM元素，在属性的最后面，即可看到该元素的类型。</p>
+<h4 id="document-querySelectorAll-selector"><a href="#document-querySelectorAll-selector" class="headerlink" title="document.querySelectorAll(selector)"></a>document.querySelectorAll(selector)</h4><p>【作用】：获取所有与选择器参数匹配的DOM元素，返回值是一个列表<br>【推荐】：使用class选择器<br>【示例】：let list &#x3D; document.querySelectorAll(‘.a)<br>【解释】：获取页面中所有class属性包含a的元素</p>
+<h3 id="操作文本内容"><a href="#操作文本内容" class="headerlink" title="操作文本内容"></a>操作文本内容</h3><p>【读取】：dom.innerText<br>【设置】：dom.innerText &#x3D; ‘xxx’<br>【追加】：dom.innerText +&#x3D; ‘xxx’</p>
+<h3 id="操作样式"><a href="#操作样式" class="headerlink" title="操作样式"></a>操作样式</h3><p>【dom.style属性】：行内样式操作，可以设置每一个样式属性（比如，字体大小、文字颜色等）<br>【读取】：dom.style.样式名称<br>【设置】：dom.style.样式名称 &#x3D; 样式值<br>【说明】：所有的样式名称都与CSS相通，但命名规则为驼峰命名发。<br>【比如】：p.style.fontSize &#x3D; ‘30px’</p>
+<p>【dom.classList属性】：类样式操作，也就是操作类名，比如，添加类名、移除类名等。<br>【常用方法】：添加、移除、判断是否存在</p>
+<p>【添加】：dom.classList.add(类名1, 类名2, …)<br>【参数表示】：要添加的类名，可以同时添加多个<br>【比如】：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;p calss=<span class="string">&quot;a&quot;</span>&gt;&lt;/p&gt;;</span><br><span class="line">dom.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>); <span class="comment">// 添加class样式 ==&gt; class=&quot;a b c&quot;</span></span><br></pre></td></tr></table></figure>
+<p>【移除】：dom.classList.remove(类名1, 类名2, …)<br>【参数表示】：要移除的类名，可以同时移除多个<br>【比如】：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;p calss=<span class="string">&quot;a b c&quot;</span>&gt;&lt;/p&gt;</span><br><span class="line">dom.<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>); <span class="comment">// 移除class样式 ==&gt; class=&quot;a&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>【判断类名是否存在】：let has &#x3D; dom.classList.contains(类名)<br>【参数表示】：要判断是否存在的类名<br>【比如】：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;p calss=<span class="string">&quot;a&quot;</span>&gt;&lt;/p&gt;</span><br><span class="line">dom.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;a&#x27;</span>); <span class="comment">// true</span></span><br><span class="line">dom.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;b&#x27;</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="操作事件"><a href="#操作事件" class="headerlink" title="操作事件"></a>操作事件</h3><p>　　在浏览网页时，我们经常会通过移入鼠标、点击鼠标、敲击键盘等操作，来使用网站提供的功能。如果要让我们自己实现这样的功能，就需要通过<strong>操作事件</strong>来实现了。实际上，移入鼠标、点击鼠标、敲击键盘等，都是常见的DOM事件。</p>
+<p>操作事件的两个方法：<br><code>addEventListener</code>添加（绑定）事件。<br><code>removeEventListener</code>移除（解绑）事件。</p>
+<h4 id="addEventListener添加事件"><a href="#addEventListener添加事件" class="headerlink" title="addEventListener添加事件"></a>addEventListener添加事件</h4><p>【作用】：给DOM元素添加事件。<br>【使用】：dom.addEventListener(事件名称, 事件处理程序)<br>【事件名称】：字符串，比如：’click’（鼠标点击事件）、’mouseenter’（鼠标进入事件）。<br>【事件处理程序】：回调函数，指定要实现的功能，该函数会在触发事件时调用。<br>【示例】：鼠标点击按钮，打印内容。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> btn = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#btn&#x27;</span>) <span class="keyword">as</span> <span class="title class_">HTMLButtonElement</span>;</span><br><span class="line">btn.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;鼠标点击事件触发了&#x27;</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>事件对象（event），是事件处理程序（回调函数）的参数。<br>表示与当前事件相关的信息，比如：事件类型（type）、触发事件的DOM元素（target）等。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> btn = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#btn&#x27;</span>) <span class="keyword">as</span> <span class="title class_">HTMLButtonElement</span>;</span><br><span class="line">btn.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params">event</span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(event.<span class="property">type</span>); <span class="comment">// click</span></span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(event.<span class="property">target</span>); <span class="comment">// btn元素</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="removeEventListener移除事件"><a href="#removeEventListener移除事件" class="headerlink" title="removeEventListener移除事件"></a>removeEventListener移除事件</h4><p>【作用】：移除给DOM元素添加的事件，移除后，事件就不再触发了。<br>【使用】：dom.removeEventListener(事件名称, 事件处理程序)<br>【事件名称】：同添加事件的第一个参数。<br>【事件处理程序】：<strong>必须要跟添加事件的事件处理程序是同一个</strong>，否则无法移除！<br>【正确方式】：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">handleClick</span>(<span class="params"></span>)&#123;&#125;</span><br><span class="line">btn.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, handleClick);</span><br><span class="line">btn.<span class="title function_">removeEventListener</span>(<span class="string">&#x27;click&#x27;</span>, handleClick);</span><br></pre></td></tr></table></figure>
+<p>【说明】：添加和移除事件时，事件处理程序时同一个，都是函数handleClick。<br>【错误演示】：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">btn.<span class="title function_">addEventListender</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;&#125;);</span><br><span class="line">btn.<span class="title function_">removeEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;&#125;);</span><br></pre></td></tr></table></figure>
+<p>【注意】：以上两个函数虽然长的一样，却是不同的函数（双胞胎，不是同一个人）。</p>
+<p>如果事件只能<strong>触发一次</strong>，可以在添加事件时处理。<br>处理方式：传入第三个参数，将once属性设置为true。<br>例如：btn.addEventListener(‘click’, function(){}, {once: true});<br>once：如果值为true，会在触发事件后，自动将事件移除，达到只触发一次的目的。</p>
+<h4 id="函数声明形式的事件处理程序说明"><a href="#函数声明形式的事件处理程序说明" class="headerlink" title="函数声明形式的事件处理程序说明"></a>函数声明形式的事件处理程序说明</h4><ol>
+<li><p>可以先使用函数，再声明函数。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">btn.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, handleClick);</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">handleClick</span>(<span class="params"></span>)&#123;&#125;;</span><br></pre></td></tr></table></figure>
+<p>【原因】：函数声明在当前TS文件中的任意位置都有定义<br>【示例】：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">fn</span>();</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params"></span>)&#123;&#125;;</span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>使用事件对象时，应该<strong>指定类型注解</strong>，否则，访问事件对象的属性时没有任何提示。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">btn.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, handleClick);</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">handleClick</span>(<span class="params">event: MouseEvent</span>) &#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(event.<span class="property">type</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>【技巧】：可以使用原始方式（匿名回调函数）查看参数类型</p>
+<h1 id="html"><a href="#html" class="headerlink" title="html"></a>html</h1><h2 id="VS快捷键使用"><a href="#VS快捷键使用" class="headerlink" title="VS快捷键使用"></a>VS快捷键使用</h2><p><code>! + &#39;tab&#39;</code> : 快速填充html基本代码内容</p>
+<h1 id="css"><a href="#css" class="headerlink" title="css"></a>css</h1><p>待补充。。。</p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>  在ts中使用到的node module需要随着html文件上传吗？</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>XipuHu</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="https://xipuhu.github.io/2022/11/13/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/">https://xipuhu.github.io/2022/11/13/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/typescript/"># typescript</a>
+                    
+                        <a href="/tags/web%E5%89%8D%E7%AB%AF/"># web前端</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2022/10/21/WebGPU%E5%85%B3%E9%94%AE%E5%86%85%E5%AE%B9%E8%AE%B0%E5%BD%95/">WebGPU关键内容记录</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© XipuHu | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
