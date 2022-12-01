@@ -3,6 +3,8 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="origin-trial" content="AhkrU5QeRlPBoyKEbcgQZ9j/KvxY+SBei7VxACZ6l4C8xijEaGytTWIJS2qeq3QdfsWs8mORADRp5/wgsssxBgAAAABjeyJvcmlnaW4iOiJodHRwczovL3hpcHVodS5naXRodWIuaW86NDQzIiwiZmVhdHVyZSI6IldlYkdQVSIsImV4cGlyeSI6MTY3NTIwOTU5OSwiaXNTdWJkb21haW4iOnRydWV9"/>
+
 		<title>xipuhu's Webgpu Examples</title>
 		<style>
 			html,
@@ -58,10 +60,6 @@
 				opacity: 1;
 			}
 		</style>
-        <meta
-        httpEquiv="origin-trial"
-        content="Al3hymV3Mt35L6R7HgcpcNoMhQxJCLbmoIKGcKx1nZnlFztXqxel/yZyzFbkLBqBeGCo3BU+ug9xW9XC33XysQ4AAABheyJvcmlnaW4iOiJodHRwczovL2F1c3Rpbi1lbmcuY29tOjQ0MyIsImZlYXR1cmUiOiJXZWJHUFUiLCJleHBpcnkiOjE2NzUyMDk1OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="
-        />
 	</head>
 	<body>
 		<div class="menu">
@@ -81,7 +79,6 @@
                 <li><a class="example active" target="instanced_cubes">实例化方式绘制多个立方体</a></li>
                 <li><a class="example active" target="cube_imageTexture">带纹理的立方体</a></li>
                 <li><a class="example active" target="cube_spriteTexture">带精灵贴图的立方体</a></li>
-                <li><a class="example active" target="cube_canvasTexture">带canvas贴图的立方体</a></li>
             </ol>
 		</div>
 		<iframe></iframe>
@@ -93,7 +90,7 @@
 			for (let example of examples) {
 				example.addEventListener("click", () => {
 					//window.location.href = "/#" + example.target
-					iframe.src = "/samples/" + example.target + ".html"
+					iframe.src = "./samples/" + example.target + ".html"
 					button.href =
 						"https://github.com/xipuhu/webgpu_examples/tree/main/src/sources/" +
 						example.target +
@@ -102,11 +99,6 @@
 					example.classList.add("active")
 				})
 			}
-			if (window.location.hash)
-				document
-					.querySelector(`[target=${window.location.hash.slice(1)}]`)
-					.click()
-			else document.querySelector(".example.active").click()
 		</script>
 	</body>
 </html>
