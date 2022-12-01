@@ -93,8 +93,7 @@
 			for (let example of examples) {
 				example.addEventListener("click", () => {
 					//window.location.href = "/#" + example.target
-					//iframe.src = "/samples/" + example.target + ".html"
-                    iframe.src = "./samples/" + example.target + ".html"
+					iframe.src = "./samples/" + example.target + ".html"
 					button.href =
 						"https://github.com/xipuhu/webgpu_examples/tree/main/src/sources/" +
 						example.target +
@@ -103,11 +102,6 @@
 					example.classList.add("active")
 				})
 			}
-			if (window.location.hash)
-				document
-					.querySelector(`[target=${window.location.hash.slice(1)}]`)
-					.click()
-			else document.querySelector(".example.active").click()
 		</script>
 	</body>
 </html>
