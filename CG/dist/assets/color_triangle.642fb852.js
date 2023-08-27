@@ -1,4 +1,4 @@
-import"./modulepreload-polyfill.c7c6310f.js";const p=`@vertex
+import"./modulepreload-polyfill.b7f2da20.js";const p=`@vertex
 fn main(@builtin(vertex_index) VertexIndex : u32) -> @builtin(position) vec4<f32> {
     var pos = array<vec2<f32>, 3>(
 	    vec2<f32>(0.0, 0.5),

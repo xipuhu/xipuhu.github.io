@@ -1,4 +1,4 @@
-import"./modulepreload-polyfill.c7c6310f.js";import{v as w,i as P,a as b,b as v,g as U,c as C,d as V,e as M}from"./math.b4722385.js";import"./vec3.f14a70f7.js";var R=`@group(0) @binding(0) var<storage> modelViews : array<mat4x4<f32>>;
+import"./modulepreload-polyfill.b7f2da20.js";import{v as w,i as P,a as b,b as v,g as U,c as C,d as V,e as M}from"./math.b4722385.js";import"./vec3.f14a70f7.js";var R=`@group(0) @binding(0) var<storage> modelViews : array<mat4x4<f32>>;
 @group(0) @binding(1) var<uniform> projection : mat4x4<f32>;
 @group(0) @binding(2) var<storage> colors : array<vec4<f32>>;
 

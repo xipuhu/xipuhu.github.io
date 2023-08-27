@@ -1,4 +1,4 @@
-import"./modulepreload-polyfill.c7c6310f.js";import{c as b,a as B,b as T,d as x,e as w,p as V,f as y,t as G,g as v,r as S,m as M}from"./vec3.aa6065a3.js";const E=`struct Uniforms {
+import"./modulepreload-polyfill.b7f2da20.js";import{c as b,a as B,b as T,d as x,e as w,p as V,f as y,t as G,g as v,r as S,m as M}from"./vec3.aa6065a3.js";const E=`struct Uniforms {
   modelViewProjectionMatrix : mat4x4<f32>,
 }
 @binding(0) @group(0) var<uniform> uniforms : Uniforms;
