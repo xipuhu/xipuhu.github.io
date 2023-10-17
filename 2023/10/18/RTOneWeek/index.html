@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="XipuHu">
+
+
+
+
+
+<title>RTOneWeek | xipuhu</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+            <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+        
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Xipuhu&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/CG">CG</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Xipuhu&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/CG">CG</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">RTOneWeek</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">XipuHu</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">October 18, 2023&nbsp;&nbsp;1:12:50</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/CG%E7%AE%97%E6%B3%95/">CG算法</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id="Ray-Sphere-Intersection"><a href="#Ray-Sphere-Intersection" class="headerlink" title="Ray-Sphere Intersection"></a>Ray-Sphere Intersection</h2><p>　　已知球体的球心位置是$(C_x, C_y, C_z)$ ，那么球体的数学公式表达如下：<br>　　$$(x-C_x)^2+(y-C_y)^2+(z-C_z)^2&#x3D;r^2$$<br>　　在图形中，我们总是想将数学公式用$vector$来进行表示，因此，这里我们可以将$x&#x2F;y&#x2F;z$用一个$vec3$来表示，并且球心$\mathbf{C}&#x3D;(C_x, C_y, C_z)$到一个点$\mathbf{P}&#x3D;(x, y,z)$的距离是$\mathbf{(P-C)}$，因此，上述公式可以转换为如下形式：<br>　　$$\mathbf{(P-C)\centerdot (P-C)} &#x3D; (x-C_x)^2+(y-C_y)^2+(z-C_z)^2&#x3D;r^2$$<br>　　对于一根光线，在数学上可以这样表示：$\mathbf{P}(t)&#x3D;\mathbf{A}+t\mathbf{b}$ ，其中$\mathbf{A}$表示光线原点，$\mathbf{b}$是光线的单位方向向量，$t$是光线的长度。如果光线射中了球体，那么将满足如下条件：<br>　　$$(\mathbf{P}(t)-\mathbf{C})\centerdot (\mathbf{P}(t)-\mathbf{C})&#x3D;r^2$$<br>　　即：<br>　　$$(\mathbf{A}+t\mathbf{b}-\mathbf{C})\centerdot (\mathbf{A}+t\mathbf{b}-\mathbf{C})&#x3D;r^2$$<br>　　继续展开可以得到如下结果：<br>　　$$t^2\mathbf{b}\centerdot \mathbf{b}+2t\mathbf{b}\centerdot(\mathbf{A-C})+(\mathbf{A-C})\centerdot(\mathbf{A-C})-r^2&#x3D;0$$<br>　　上述等式是一个关于$t$的二元一次方程，要判断光线是否与球体有交点，只要判断该方程是否有解即可。根据二元一次方程求根公式，我们可以判断是否满足如下条件：<br>　　$$\triangle&#x3D;b^2-4ac&gt;0$$<br>　　其中，$a&#x3D;\mathbf{b\centerdot b}$，$b&#x3D;2\mathbf{b\centerdot (A-C)}$ ，$c&#x3D;\mathbf{(A-C)\centerdot (A-C)}-r^2$</p>
+<h2 id="Diffuse-Materials"><a href="#Diffuse-Materials" class="headerlink" title="Diffuse Materials"></a>Diffuse Materials</h2><p>　　一般而言，材质需要和几何体强绑定在一起，这样才能获得对几何体的最终着色结果，为了能够将材质复用到不同的几何体，这里需要将材质类单独实现。<br>　　不发光的漫反射物体只是呈现出周围环境的颜色，并且它们也会用自己固有的颜色来调节这种颜色。从漫反射表面反射的光的方向是随机的，所以，如果我们向两个扩散表面之间的裂缝发送三束射线，它们将有不同的随机行为:<br>　　<img src="https://hexo-2022-1258021165.cos.ap-guangzhou.myqcloud.com/RTOneWeek/Pasted%20image%2020230312170747.png"><br>　　实际上，任何随机方向的算法都会产生看起来哑光的表面（漫反射结果）。其中一个最简单的方法被证明是完全正确的理想扩散表面。(我曾经把它当作一种懒惰的hack，近似于数学上理想的Lambertian。)<br>　　有两个单位半径的球体，与曲面的命中点$p$相切。这两个球体的中心分别是$(𝐏+𝐧)$和$(𝐏−𝐧)$，其中$𝐧$是表面的法线。以$(𝐏-𝐧)$为中心的球体被认为是曲面内部，而以$(𝐏+𝐧)$为中心的球体被认为是曲面外部。选择与射线原点在同一面上的切线单位半径球，在这个单位半径球内选择一个随机点$𝐒$，并从命中点$𝐏$发送一条射线到随机点$𝐒$(这是矢量$(𝐒−𝐏)$)，由此可以产生一条随机方向的反射方向，从而模拟出漫反射结果:<br>　　<img src="https://hexo-2022-1258021165.cos.ap-guangzhou.myqcloud.com/RTOneWeek/Pasted%20image%2020230312171304.png"><br>　　我们需要一种在单位半径球中随机选取一点的方法，这里将使用使用通常最简单的算法:<strong>拒绝方法</strong>。首先，在单位立方体中选择一个$x$、$y$和$z$都在−1到1范围内的随机点。如果这个点在球面外，那么就拒绝这个点，再试一次，直到这个点在球面内，需要注意的是这个过程是递归的，我们需要设置一个最大的递归深度来避免栈溢出。<br>　　漫反射的球体看起来应该不是暗黑色的(在现实生活中，浅灰色)。原因是几乎所有的图像查看器都假设图像是“gamma校正”的，这意味着0到1的值在被存储为字节之前进行了一些转换。这有很多很好的理由，但为了我们的目的，我们只需要意识到这一点。对于第一个近似，我们可以使用“gamma 2”，这意味着将颜色提升到$\frac{1}{𝑔𝑎𝑚𝑚𝑎}$的幂，或者在我们简单的情况下的$\frac{1}{2}$，也就是平方根。<br><img src="https://hexo-2022-1258021165.cos.ap-guangzhou.myqcloud.com/RTOneWeek/Pasted%20image%2020230312174327.png"><br>　　$Lambertian$分布是一种用$cos(\phi)$来描述射线与法线夹角大小的分布，当射线越靠近法线时，发生漫反射的概率就越大，这种情况更符合正态分布。这是通过选取单位球体表面上的随机点来实现的，沿着表面法线偏移。选取单位球上的随机点，然后进行归一化可以实现对单位球体表面上选取随机点。<br><img src="https://hexo-2022-1258021165.cos.ap-guangzhou.myqcloud.com/RTOneWeek/Pasted%20image%2020230312180848.png"></p>
+<h2 id="Metal-Materials"><a href="#Metal-Materials" class="headerlink" title="Metal Materials"></a>Metal Materials</h2><p>　　对于我们已经有的$Lambertian$(diffuse)情况，它可以一直散射，并通过其反射率$𝑅$衰减，或者它可以散射而没有衰减，但吸收$1 -𝑅$的射线，或者它可以是这些情况的混合。请注意，我们也可以只以某种概率$𝑝$进行散射，并将衰减设为$𝑎𝑙𝑏𝑒𝑑𝑜&#x2F;𝑝$。<br>　　对于光滑的金属，射线不会随意发生散射。关键的一个数学问题是:光线如何从金属镜面中进行反射？我们可以通过向量来进行描述：<br><img src="https://hexo-2022-1258021165.cos.ap-guangzhou.myqcloud.com/RTOneWeek/Pasted%20image%2020230315002136.png"><br>　　上图中红色的反射射线方向就是$𝐯+2𝐛$。在我们的设计中，$𝐧$是单位向量，但$𝐯$可能不是。$𝐛$的长度应该是$𝐯\cdot𝐧$。因为$𝐯$指向内部，我们需要一个负号，即红色的反射射线的计算结果为：$v-2*dot(v, n)*n$。<br>　　我们还可以通过使用一个小球体来随机反射方向，并为射线选择一个新的端点:<br><img src="https://hexo-2022-1258021165.cos.ap-guangzhou.myqcloud.com/RTOneWeek/Pasted%20image%2020230315002805.png"><br>　　球体越大，反射就越模糊。这意味着需要添加一个模糊参数，这个参数就是球体的半径(因此零是没有扰动)。问题是，对于大球体或射线，可能会分散在表面以下，让表面吸收它们：<br><img src="https://hexo-2022-1258021165.cos.ap-guangzhou.myqcloud.com/RTOneWeek/Pasted%20image%2020230315003440.png"></p>
+<h2 id="Dielectrics-Materials"><a href="#Dielectrics-Materials" class="headerlink" title="Dielectrics Materials"></a>Dielectrics Materials</h2><p>　　透明的材料，如水、玻璃和钻石都是介质。当光线击中它们时，它会分裂成反射光线和折射(透射)光线。我们将通过随机选择反射或折射来处理这个问题，并且每次相互作用只生成一个散射射线。<br>　　最难调试的部分是折射光线，通常情况下，如果有折射光线的话，首先要让所有的光线都折射。对于这个项目，我尝试在我们的场景中放置两个玻璃球，我得到了这个(我还没有告诉你如何正确或错误地这样做，但很快!):<br><img src="https://hexo-2022-1258021165.cos.ap-guangzhou.myqcloud.com/RTOneWeek/Pasted%20image%2020230315004044.png"><br>　　上面的结果对吗？玻璃球在现实生活中看起来很奇怪。但是不，这是不对的。世界应该被颠倒过来，没有奇怪的黑色东西。我只是打印出了穿过图像中间的光线，这显然是错误的</p>
+<p>　　通常会用$Snell’s law$（斯涅尔定律）描述折射:<br>$$\eta \cdot \sin\theta &#x3D; \eta’ \cdot \sin\theta’$$<br>　　其中$\theta$和$\theta’$是射线与法线的角度，$\eta$和$\eta’$是折射率(通常是空气&#x3D; 1.0，玻璃&#x3D; 1.3-1.7，钻石&#x3D; 2.4)。几何形状是:<br><img src="https://hexo-2022-1258021165.cos.ap-guangzhou.myqcloud.com/RTOneWeek/Pasted%20image%2020230315004430.png"></p>
+<p>为了确定折射光线的方向，我们必须求解$\sin\theta’$:<br>$$\sin\theta’ &#x3D; \frac{\eta}{\eta’} \cdot \sin\theta$$<br>在表面的折射一侧有一条折射光线$\mathbf{R’}$和一条法线$\mathbf{n’}$，它们之间存在一个角度$𝜃’$。我们可以将$\mathbf{R’}$分割成垂直于$\mathbf{n’}$和平行于$\mathbf{n’}$的射线部分:<br>$$\mathbf{R’} &#x3D; \mathbf{R’}<em>{\bot} + \mathbf{R’}</em>{\parallel}$$<br>求解$\mathbf{R’}<em>{\bot}$和$\mathbf{R’}</em>{\parallel}$就得到：<br>$$\mathbf{R’}<em>{\bot} &#x3D; \frac{\eta}{\eta’} (\mathbf{R} + \cos\theta \mathbf{n})$$<br>$$\mathbf{R’}</em>{\parallel} &#x3D; -\sqrt{1 - |\mathbf{R’}<em>{\bot}|^2} \mathbf{n}$$<br>我们还需要解$cos\theta$。众所周知，两个向量的点积可以用它们之间夹角的余弦来解释:<br>$$\mathbf{a} \cdot \mathbf{b} &#x3D; |\mathbf{a}| |\mathbf{b}| \cos\theta$$<br>如果我们限制$𝐚$和$𝐛$为单位向量:<br>$$\mathbf{a} \cdot \mathbf{b} &#x3D; \cos\theta$$<br>现在我们可以用已知量来重写$\mathbf{R’}</em>{\bot}$：<br>$$\mathbf{R’}<em>{\bot} &#x3D;<br>     \frac{\eta}{\eta’} (\mathbf{R} + (\mathbf{-R} \cdot \mathbf{n}) \mathbf{n})$$<br>通过$\mathbf{R’}</em>{\bot}$可以很快得出$\mathbf{R’}_{\parallel}$，继而可获得：</p>
+<p>$$\mathbf{R’} &#x3D; \mathbf{R’}<em>{\bot} + \mathbf{R’}</em>{\parallel}$$</p>
+<p>一个麻烦的实际问题是，当光线处于折射率较高的材料中时，斯涅尔定律没有真正的解，因此不可能发生折射。如果我们回顾斯内尔定律和罪的推导$\sin\theta’$：<br>$$\sin\theta’ &#x3D; \frac{\eta}{\eta’} \cdot \sin\theta$$<br>如果光线在玻璃内部，外面是空气(${\eta}&#x3D;1.5$，${\eta’} &#x3D;1.0$)：<br>$$\sin\theta’ &#x3D; \frac{1.5}{1.0} \cdot \sin\theta$$</p>
+<p>$\sin\theta’$的值不能大于1。所以，如果，<br>$$\frac{1.5}{1.0} \cdot \sin\theta &gt; 1.0$$</p>
+<p>两边的等式就被打破了，解就不存在了。如果溶液不存在，玻璃就不能折射，因此必须反射光线，对这种情况进行判断分别处理。<br>在这里，所有的光都被反射了，因为实际上光通常是在固体内部的，所以被称为“全内反射”。这就是为什么当你在水下时，水-空气边界有时就像一面完美的镜子。<br>我们可以用三角函数性质来解$\sin\theta$：<br>$$\sin\theta  &#x3D; \sqrt{1 - \cos^2\theta}$$<br>并且，其中$\cos\theta &#x3D; \mathbf{R} \cdot \mathbf{n}$。</p>
+<p><img src="https://hexo-2022-1258021165.cos.ap-guangzhou.myqcloud.com/RTOneWeek/Pasted%20image%2020230315011904.png"><br>　　真正的玻璃的反射率随角度的变化而变化，比如以一个较大的倾斜角度去看一扇的窗户时，它就会变成一面镜子。这有一个丑陋的大方程，但几乎每个人都使用克里斯托弗·施里克(Christophe Schlick)的廉价而精确的多项式来进行近似。<br>　　电介质球的一个有趣而简单的技巧是，如果你使用负半径，几何形状不受影响，但表面法线将指向内部。这可以作为一个气泡，一个中空的玻璃球:<br><img src="https://hexo-2022-1258021165.cos.ap-guangzhou.myqcloud.com/RTOneWeek/Pasted%20image%2020230315012415.png"></p>
+<h2 id="常见数值运算"><a href="#常见数值运算" class="headerlink" title="常见数值运算"></a>常见数值运算</h2><p>　　1、当$x\in[-1,1]$ 的时候，我们需要将其范围转换为$[0,1]$时，可以进行如下转换：<br>　　$$x&#x3D;(x+1)&#x2F;2$$<br>　　2、抗锯齿解决思路：在对一个像素进行着色时，可以增加采样次数，然后对累积的采样结果求平均，即可获得一个抗锯齿的效果。<br>　　<br>　　3、线性插值：<br>　　$$\text{blendedValue} &#x3D; (1-t)\cdot\text{startValue} + t\cdot\text{endValue}$$</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>XipuHu</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="https://xipuhu.github.io/2023/10/18/RTOneWeek/">https://xipuhu.github.io/2023/10/18/RTOneWeek/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/RayTracing/"># RayTracing</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2022/11/13/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/">前端基础内容</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© XipuHu | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
